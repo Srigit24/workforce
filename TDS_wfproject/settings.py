@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%_8b+ma@noz)r)gzz)-9u218n8pe+39j*01z@haya+4$)ks)c0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.83.113.67']
 
 
 # Application definition
@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'TDS_wfproject.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "touchmark_workforce",
-        "USER": "root",
-        "PASSWORD": "",
-        "HOST": "127.0.0.1",
+        "NAME": "workforcedb",
+        "USER": "workforceadmin",
+        "PASSWORD": "workforceadmin123",
+        "HOST": "workforcedb.c9suiieq2rb1.us-east-1.rds.amazonaws.com",
         "PORT": "3306",
          'OPTIONS': {
             'sql_mode': 'STRICT_ALL_TABLES',
