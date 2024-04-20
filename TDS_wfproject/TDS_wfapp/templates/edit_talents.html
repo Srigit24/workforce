@@ -1,0 +1,546 @@
+<!DOCTYPE html><!-- saved from url=(0014)about:internet -->
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
+    data-menu-styles="dark" data-toggled="close">
+
+
+<head><!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Workforce - Company</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://spruko.com/demo/ynex/dist/static/images/brand-logos/favicon.ico" type="image/x-icon">
+    <!-- Choices JS -->
+
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet"> <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet"> <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet"> <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet"> <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/css/icons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/styles.min.css">
+    <link rel="stylesheet" href="../static/libs/%40simonwep/pickr/themes/nano.min.css"> <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="../static/css/nouislider.min.css">
+    <link rel="stylesheet" href="../static/css/nouslider.css">
+    <link rel="stylesheet" href="../static/libs/prismjs/themes/prism-coy.min.css">
+    <!-- Add this in the <head> section of your HTML -->
+    <link rel="stylesheet" href="../static/css/choices.min.css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.bubble.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page"> <!-- app-header -->
+        <header class="app-header"> <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid"> <!-- Start::header-content-left -->
+                <div class="header-content-left"> <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo"> <a href="index.html" class="header-logo"> <img
+                                    src="../static/images/Workforce_logo_white.png" alt="logo"
+                                    class="toggle-dark"> </a> </div>
+                    </div> <!-- End::header-element -->
+                </div> <!-- End::main-header-container -->
+                <!-- Start:Profile at Topbar -->
+                <div class="header-element"> <!-- Start::header-link|dropdown-toggle --> <a href="javascript:void(0);"
+                        class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <div class="me-sm-2 me-0"> <img src="../static/images/adminprofile.jpg" alt="img" width="32"
+                                    height="32" class="rounded-circle"> </div>
+                            <div class="d-sm-block d-none">
+                                <p class="fw-semibold mb-0 lh-1">Info</p><span class="op-7 fw-normal d-block fs-11">Role
+                                    - Admin</span>
+                            </div>
+                        </div>
+                    </a> <!-- End::header-link|dropdown-toggle -->
+                    <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
+                        aria-labelledby="mainHeaderProfile">
+                        <li><a class="dropdown-item d-flex" href="profile.html"><i
+                                    class="ti ti-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
+                        <li><a class="dropdown-item d-flex" href="sign-in-cover.html"><i
+                                    class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</a></li>
+                    </ul>
+                </div>
+                <!-- End: -->
+        </header><!-- Start::app-sidebar -->
+
+        <aside class="app-sidebar sticky" id="sidebar"> <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header"> <a href="index.html" class="header-logo"><img
+                        src="../static/images/Workforce_logo_white.png" alt="logo" class="desktop-dark"> </a>
+            </div>
+            <!-- End::main-sidebar-header --> <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: -8px 0px -80px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 8px 0px 80px;">
+                                    <!-- Start::nav -->
+                                    <nav class="main-menu-container nav nav-pills flex-column sub-open open active">
+                                        <ul class="main-menu"
+                                            style="display: block; margin-left: 0px; margin-right: 0px;">
+                                            <li class="slide">
+                                                <a href="{% url 'dashboard' %}" class="side-menu__item">
+                                                    <i class="bi bi-speedometer side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Dashboard</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_company' %}" class="side-menu__item">
+                                                    <i class="bi bi-briefcase side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Companies</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_recruiters' %}" class="side-menu__item">
+                                                    <i class="bi bi-award side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Recruiters</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_talent' %}" class="side-menu__item active">
+                                                    <i class="bi-people side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Talent</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_jobs' %}" class="side-menu__item">
+                                                    <i class="bi-joystick side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Jobs</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_meetings' %}" class="side-menu__item">
+                                                    <i class="bi-calendar side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Meetings</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav> <!-- End::nav -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-placeholder" style="width: auto; height: 1200px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar"
+                        style="width: 0px; display: none; transform: translate3d(0px, 0px, 0px);">
+                    </div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 142px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                </div>
+            </div> <!-- End::main-sidebar -->
+        </aside> <!-- End::app-sidebar --> <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <!-- Page Header -->
+            <div class="container">
+                <!-- Page Header -->
+                <div class="row mt-4">
+                    <div class="col-xl-6">
+                        <h1 class="page-title fw-semibold fs-18 mb-0">Talent</h1>
+                        <nav>
+                            <ol class="breadcrumb breadcrumb-style2 mt-2">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                            class="ti ti-home-2 me-1 fs-15 d-inline-block"></i>Home</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                            class="bi bi-people me-1 fs-15 d-inline-block"></i>Talent</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Edit</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-xl-6 justify-content-end text-end">
+                        <a href="{% url 'list_talent' %}"
+                            class="btn btn-outline-warning btn-sm rounded-pill btn-wave waves-effect waves-light">Back
+                            to List</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header Close -->
+            <div class="container"> <!-- Start::row-1 -->
+                 <form method="post" action="{% url 'edit_talent' talent.talent_id   %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                 <input type="hidden" name="talent_id" value="{{ talent.talent_id }}">
+                <div class="row">
+                    <div class="col-xxl-9 col-xl-8">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title"> Create Talent </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row gy-4 mb-4">
+                                    <div class="col-xl-4"> <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" value="{{ talent.talent_name}}"
+                                            placeholder="Enter the name of the talent">
+                                    </div>
+                                    <div class="col-xl-4"> <label for="email" class="form-label">Email
+                                            ID</label>
+                                        <input type="email" class="form-control" id="email" name="email" value="{{ talent.talent_email}}"
+                                            placeholder="Enter the email id of the talent">
+                                    </div>
+                                    <div class="col-xl-4"> <label for="phone_number" class="form-label">Mobile
+                                            Number</label>
+                                        <input type="tel" class="form-control" id="phone_number" name="phone_number" value="{{ talent.talent_phone_number}}"
+                                            placeholder="Enter the mobile number of the talent">
+                                    </div>
+                                </div>
+                                 <div class="row gy-4 mb-4">
+                                    <div class="col-xl-4"> <label for="date_of_birth" class="form-label">Date
+                                            of
+                                            Birth</label>
+                                        <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ talent.talent_date_of_birth}}"
+                                            placeholder="DD/MM/YYYY">
+                                    </div>
+                                     <div class="col-xl-4"> <label for="name" class="form-label">Country</label>
+                                            <input type="text" class="form-control" id="talent_location"
+                                                name="talent_location" placeholder="Enter the name of the talent" value="{{ talent.talent_location }}">
+                                        </div>
+                                        <div class="col-xl-4"> <label for="name" class="form-label">Address</label>
+                                            <textarea rows="2" class="form-control" id="talent_address"
+                                                name="talent_address">{{ talent.talent_address}}</textarea>
+                                        </div>
+                                    </div>
+                                     
+                                   
+                                    <div class="row gy-4 mb-4">
+                                      <div class="col-xl-4">
+    <label for="talent_gender" class="form-label">Gender</label>
+    <select class="form-select" name="talent_gender" id="talent_gender">
+        <option value="Male" {% if talent.talent_gender == 'Male' %} selected {% endif %}>Male</option>
+        <option value="Female" {% if talent.talent_gender == 'Female' %} selected {% endif %}>Female</option>
+        <option value="Others" {% if talent.talent_gender == 'Others' %} selected {% endif %}>Others</option>
+    </select>
+</div>
+
+                                        
+                                        <div class="col-xl-4">
+    <label for="martial_status" class="form-label">Marital Status</label>
+    <select class="form-select" name="talent_martial_status" id="talent_martial_status">
+        <option value="Un-Married" {% if talent.talent_martial_status == 'Un-Married' %} selected {% endif %}>Un-Married</option>
+        <option value="Married" {% if talent.talent_martial_status == 'Married' %} selected {% endif %}>Married</option>
+    </select>
+</div>
+
+                                       <div class="col-xl-4">
+    <label for="martial_status" class="form-label">Availability / Notice Period Status</label>
+    <select name="talent_work_availability" id="talent_work_availability" class="form-select">
+        <option value="Immediate Joiner" {% if talent.talent_work_availability == 'Immediate Joiner' %} selected {% endif %}>Immediate Joiner</option>
+        <option value="30 days" {% if talent.talent_work_availability == '30 days' %} selected {% endif %}>30 days</option>
+        <option value="3 months" {% if talent.talent_work_availability == '3 months' %} selected {% endif %}>3 months</option>
+    </select>
+</div>
+
+                                    </div>
+                                    <div class="row gy-4 mb-4">
+                                        <div class="col-xl-4">
+    <label for="employment_type" class="form-label">Employment Type</label>
+    <select name="talent_employment" id="talent_employment" class="form-select">
+        <option value="Fresher" {% if talent.talent_employment == 'Fresher' %} selected {% endif %}>Fresher</option>
+        <option value="Experienced" {% if talent.talent_employment == 'Experienced' %} selected {% endif %}>Experienced</option>
+    </select>
+</div>
+
+                                        <div class="col-xl-4">
+    <label for="talent_preferred_shift" class="form-label">Preferred Shift</label>
+    <select name="talent_preferred_shift" id="talent_preferred_shift" class="form-select">
+        <option value="Day Shift" {% if talent.talent_preferred_shift == 'Day Shift' %} selected {% endif %}>Day Shift</option>
+        <option value="Night Shift" {% if talent.talent_preferred_shift == 'Night Shift' %} selected {% endif %}>Night Shift</option>
+        <option value="Flexible Shift" {% if talent.talent_preferred_shift == 'Flexible Shift' %} selected {% endif %}>Flexible Shift</option>
+    </select>
+</div>
+
+                                    </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <label for="education" class="form-label">Education</label>
+                                         {% for education in educations %}
+                                        <div class="form-group fieldGroup">
+                                            <!-- Education input fields go here -->                                             
+                                            <div class="input-group mb-3">
+                                                <input type="text" name="college_name[]" class="form-control"
+                                                    placeholder="College Name"  value="{{ education.college_name }}" />
+                                                <input type="text" name="degree[]" class="form-control"
+                                                    placeholder="degree" value="{{ education.degree }}" />
+                                                    
+                                                <input type="text" name="college_batch[]" class="form-control"
+                                                    placeholder="From YYYY - To YYYY" value="{{ education.college_batch }}" />
+                                                <input type="text" name="college_location[]"
+                                                    class="form-control" placeholder="location of college" value="{{ education.college_location }}" />
+                                                <span class="input-group-text">
+                                                    <a href="javascript:void(0);"
+                                                        class="btn btn-info addMoreEducation"><i
+                                                            class="bi bi-plus"></i></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                          
+                                          {% endfor %}
+                                        <!-- Copy of Education input fields -->
+                                       <div class="form-group fieldGroupCopy" style="display: none;">
+                                            <div class="input-group mb-3">
+                                                <input type="text" name="college_name[]" class="form-control"
+                                                    placeholder="College Name" />
+                                                <input type="text" name="degree" class="form-control"
+                                                    placeholder="Degree" />
+                                                   <input type="text" name="candidate_specification[]" class="form-control"
+                                                    placeholder="Specification" /> 
+                                                <input type="text" name="college_batch[]" class="form-control"
+                                                    placeholder="From YYYY - To YYYY" />
+                                                <input type="text" name="college_location[]"
+                                                    class="form-control" placeholder="Enter the location of college" />
+                                                <span class="input-group-text">
+                                                    <a href="javascript:void(0)"
+                                                        class="btn btn-danger removeEducation"><i
+                                                            class="bi bi-x-lg"></i></a>
+                                                </span>
+                                            </div>
+                                        </div> 
+                                    </div>
+
+                                    <div class="col-xl-12">
+                                        <label for="experience" class="form-label">Experience</label>
+                                        <div class="form-group fieldexperienceGroup">
+                                            <!-- Experience input fields go here -->
+                                            <div class="input-group mb-3">
+    <!-- Existing experience input fields -->
+    {% for experience in experiences %}
+    <input type="text" name="company_name[]" class="form-control" value="{{ experience.company_name }}" placeholder="Company Name" />
+    <input type="text" name="company_location[]" class="form-control" value="{{ experience.company_location }}" placeholder="Company Location" />
+    <input type="text" name="start_date[]" class="form-control flatpickr-input" value="{{ experience.start_date }}" placeholder="Select Start Date">
+    <input type="text" name="end_date[]" class="form-control flatpickr-input" value="{{ experience.end_date }}" placeholder="Select End Date">
+    <!-- <textarea name="candidate_responsibilities[]" class="form-control" placeholder="Responsibilities">{{ experience.responsibilities }}</textarea> -->
+    <span class="input-group-text">
+        <a href="javascript:void(0);" class="btn btn-info addmoreExperience"><i class="bi bi-plus"></i></a>
+    </span>
+    {% endfor %}
+</div>
+                                        </div>
+                                        <!-- Copy of Experience input fields -->
+                                        <div class="form-group fieldexperienceCopy" style="display: none;">
+                                            <div class="input-group mb-3">
+                                                <input type="text" name="company_name[]" class="form-control"
+                                                    placeholder="Company Name" />
+                                                <input type="text" name="company_location[]"
+                                                    class="form-control" placeholder="Company Location" />
+                                                <input type="text" id="start_date" name="start_date" class="form-control flatpickr-input"
+                                                    placeholder="Select Start Date">
+                                                <input type="text" id="end_date" name="end_date" class="form-control flatpickr-input"
+                                                    placeholder="Select End Date">
+                                                <!-- <textarea name="candidate_responsibilities[]" class="form-control"
+                                                    placeholder="Responsibilities"></textarea> -->
+                                                <span class="input-group-text">
+                                                    <a href="javascript:void(0);"
+                                                        class="btn btn-danger removeExperience"><i
+                                                            class="bi bi-x-lg"></i></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <label for="talent_career_objective" class="form-label">Career
+                                            Objective</label>
+                                        <textarea rows="2" class="form-control" id="talent_career_objective"
+                                            name="talent_career_objective" >{{ talent.talent_career_objective }}</textarea>
+                                    </div>
+
+                                    <div class="col-xl-6"> <label for="education"
+                                            class="form-label">Certifications</label>
+                                        <textarea type="text" class="form-control" id="talent_certifications"
+                                            name="talent_certifications ">{{ talent.talent_certifications }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-3 col-xl-4">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title"> Skillsets: </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="col-xl-12">
+                                    <label for="talent_skills" class="form-label">Skills :</label>
+                                    <div class="choices" data-type="select-multiple" aria-expanded="false">
+                                        <input type="text" id="talent_skills" name="talent_skills" value="{{ talent.talent_skills }}"class="choices__input"
+                                            placeholder="Enter skills" autocomplete="off"
+                                            aria-autocomplete="list" aria-label="Type to search">
+                                        <div class="choices__list choices__list--multiple"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-xl-12">
+                                <div class="card custom-card">
+                                    <div class="card-header">
+                                        <div class="card-title">Upload Files</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <label for="id_talent_resume" class="form-label">Resume (max 1 MB)</label>
+                                            <input type="file" name="talent_resume" id="id_talent_resume" class="form-control">
+                                        </div>
+                                        <div class="mt-4">
+                                            <label for="id_talent_profile_image" class="form-label">Profile Image</label>
+                                            <input type="file" name="talent_profile_image" id="id_talent_profile_image" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title"> Social Media Links: </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="LinkedIn Profile URL"
+                                                id="talent_linkedin_profile_url" name="talent_linkedin_profile_url" value="{{ talent.talent_linkedin_profile_url}}"  >
+                                            <span class="input-group-text"><i class="bi bi-linkedin"></i></span>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Instagram Profile URL"
+                                                id="talent_instagram_profile_url" name="talent_instagram_profile_url" value="{{ talent.talent_instagram_profile_url }}"  >
+                                            <span class="input-group-text"><i class="bi bi-instagram"></i></span>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Facebook Profile URL"
+                                                id="talent_facebook_profile_url" name="talent_facebook_profile_url" value="{{ talent.talent_facebook_profile_url }}" >
+                                            <span class="input-group-text"><i class="bi bi-facebook"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-end">
+                            {% comment %} <button class="btn btn-outline-dark rounded-pill btn-wave waves-effect waves-light"
+                                type="submit">Reset</button> {% endcomment %}
+                            <button class="btn btn-success rounded-pill btn-wave waves-effect waves-light"
+                                type="submit">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              </form>
+        </div>
+    </div>
+</body>
+<script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<!-- FLATPICKR JS -->
+<script src="../static/js/date-picker.min.js"></script>
+<script src="../static/libs/flatpickr/flatpickr.min.js"></script>
+<script src="../static/js/defaultmenu.min.js"></script>
+<script src="../static/libs/node-waves/waves.min.js"></script>
+<script src="../static/js/nouislider.min.js"></script>
+<script src="../static/js/job-search-candidate.js"></script>
+<script src="../static/js/jobs-post.js"></script>
+<script src="../static/js/wNumb.js"></script>
+<script src="../static/js/custom.js"></script>
+<script src="../static/js/choice.js"></script>
+<script src="https://spruko.com/demo/ynex/dist/assets/js/choices.js"></script>
+<script src="../static/js/main.js"></script>
+<script src="../static/js/custom-switcher.min.js"></script>
+<script src="../static/js/nouislider.js"></script>
+
+<!-- jQuery CDN CHOICES JS-->
+<script src="../static/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Maximum number of groups can be added
+        var maxGroup = 10;
+
+        // Add more group of input fields for Education
+        $(".addMoreEducation").click(function () {
+            if ($('body').find('.fieldGroup').length < maxGroup) {
+                var fieldHTML = '<div class="form-group fieldGroup">' + $(".fieldGroupCopy").html() + '</div>';
+                $('body').find('.fieldGroup:last').after(fieldHTML);
+            } else {
+                alert('Maximum ' + maxGroup + ' groups are allowed for Education.');
+            }
+        });
+
+        // Remove fields group for Education
+        $("body").on("click", ".removeEducation", function () {
+            $(this).parents(".fieldGroup").remove();
+        });
+
+        // Add more group of input fields for Experience
+        $(".addMoreExperience").click(function () {
+            if ($('body').find('.fieldexperienceCopy').length < maxGroup) {
+                var fieldHTML = '<div class="form-group fieldexperienceCopy">' + $(".fieldexperienceCopy").html() + '</div>';
+                $('body').find('.fieldexperienceCopy:last').after(fieldHTML);
+            } else {
+                alert('Maximum ' + maxGroup + ' groups are allowed for Experience.');
+            }
+        });
+
+        // Remove fields group for Experience
+        $("body").on("click", ".removeExperience", function () {
+            $(this).parents(".fieldexperienceCopy").remove();
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        flatpickr('#date_of_birth', {
+            dateFormat: "d/m/Y", // Set date format to DD/MM/YYYY
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        flatpickr('#startYear', {
+            dateFormat: "d/m/Y",// Display and select years only
+        });
+
+        flatpickr('#endYear', {
+            dateFormat: "d/m/Y", // Display and select years only
+        });
+    });
+
+
+    const skillsSelect = new Choices('#talent_skills', {
+        delimiter: ',', // Set the delimiter for multiple values
+        placeholder: true, // Show placeholder text
+        searchEnabled: true, // Enable searching for choices
+        removeItemButton: true, // Enable remove button for selected choices
+    });
+
+    // Dynamically add skills
+    document.getElementById('talent_skills').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            const newSkill = e.target.value.trim();
+            if (newSkill) {
+                skillsSelect.setChoiceByValue(newSkill);
+                e.target.value = ''; // Clear the input field after adding the skill
+            }
+        }
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html><!-- saved from url=(0014)about:internet -->
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
+    data-menu-styles="dark" data-toggled="close">
+
+
+<head><!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Workforce - Company</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://spruko.com/demo/ynex/dist/static/images/brand-logos/favicon.ico" type="image/x-icon">
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script> <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script> <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet"> <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet"> <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet"> <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet"> <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/css/icons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/styles.min.css">
+    <link rel="stylesheet" href="../static/libs/%40simonwep/pickr/themes/nano.min.css"> <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/static/styles/choices.min.css">
+    <link rel="stylesheet" href="../static/css/nouislider.min.css">
+    <link rel="stylesheet" href="../static/css/nouslider.css">
+
+</head>
+
+<body>
+    <div class="page"> <!-- app-header -->
+        <header class="app-header"> <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid"> <!-- Start::header-content-left -->
+                <div class="header-content-left"> <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo"> <a href="index.html" class="header-logo"> <img
+                                    src="../static/images/Workforce_logo_white.png" alt="logo"
+                                    class="toggle-dark"> </a> </div>
+                    </div> <!-- End::header-element -->
+                </div> <!-- End::main-header-container -->
+                <!-- Start:Profile at Topbar -->
+                <div class="header-element"> <!-- Start::header-link|dropdown-toggle --> <a href="javascript:void(0);"
+                        class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <div class="me-sm-2 me-0"> <img src="../static/images/adminprofile.jpg" alt="img" width="32"
+                                    height="32" class="rounded-circle"> </div>
+                            <div class="d-sm-block d-none">
+                                <p class="fw-semibold mb-0 lh-1">Info</p><span class="op-7 fw-normal d-block fs-11">Role
+                                    - Admin</span>
+                            </div>
+                        </div>
+                    </a> <!-- End::header-link|dropdown-toggle -->
+                    <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
+                        aria-labelledby="mainHeaderProfile">
+                        <li><a class="dropdown-item d-flex" href="profile.html"><i
+                                    class="ti ti-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
+                        <li><a class="dropdown-item d-flex" href="sign-in-cover.html"><i
+                                    class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</a></li>
+                    </ul>
+                </div>
+                <!-- End: -->
+        </header><!-- Start::app-sidebar -->
+
+        <aside class="app-sidebar sticky" id="sidebar"> <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header"> <a href="index.html" class="header-logo"><img
+                        src="../static/images/Workforce_logo_white.png" alt="logo" class="desktop-dark"> </a>
+            </div>
+            <!-- End::main-sidebar-header --> <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: -8px 0px -80px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 8px 0px 80px;">
+                                    <!-- Start::nav -->
+                                    <nav class="main-menu-container nav nav-pills flex-column sub-open open active">
+                                        <ul class="main-menu"
+                                            style="display: block; margin-left: 0px; margin-right: 0px;">
+                                            <li class="slide">
+                                                <a href="{% url 'dashboard' %}" class="side-menu__item">
+                                                    <i class="bi bi-speedometer side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Dashboard</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_company' %}" class="side-menu__item">
+                                                    <i class="bi bi-briefcase side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Companies</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_recruiters' %}" class="side-menu__item">
+                                                    <i class="bi bi-award side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Recruiters</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_talent' %}" class="side-menu__item active">
+                                                    <i class="bi-people side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Talent</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_jobs' %}" class="side-menu__item">
+                                                    <i class="bi-joystick side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Jobs</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_meetings' %}" class="side-menu__item">
+                                                    <i class="bi-calendar side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Meetings</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav> <!-- End::nav -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-placeholder" style="width: auto; height: 1200px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar"
+                        style="width: 0px; display: none; transform: translate3d(0px, 0px, 0px);">
+                    </div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 142px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                </div>
+            </div> <!-- End::main-sidebar -->
+        </aside> <!-- End::app-sidebar --> <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <!-- Page Header -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <h1 class="page-title fw-semibold fs-18 mb-0">Talent</h1>
+                        <nav>
+                            <ol class="breadcrumb breadcrumb-style2 mt-2">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                            class="ti ti-home-2 me-1 fs-15 d-inline-block"></i>Home</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                            class="ti ti-briefcase me-1 fs-15 d-inline-block"></i>Talent</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Preview</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center flex-wrap justify-content-between gap-2">
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <div>
+                                            <span class="avatar avatar-xxl avatar-rounded">
+                                                <img src="../../media/{{ talent.talent_profile_image }}"
+                                                    class="rounded-circle img-fluid" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h4 class="fw-bold mb-0 d-flex align-items-center"><a
+                                                    href="javascript:void(0);"> {{ talent.talent_name }}<i
+                                                        class="bi bi-check-circle-fill text-success fs-16"
+                                                        data-bs-toggle="tooltip" aria-label="Verified candidate"
+                                                        data-bs-original-title="Verified candidate"></i></a></h4>
+                                            <!-- <a href="javascript:void(0);" class="fw-semibold"><i
+                                                    class="bi bi-briefcase me-1"></i> Software Developer</a> -->
+                                            <!-- <div class="d-flex flex-wrap gap-2 align-items-center fs-11 text-muted">
+                                                <p class="fs-11 mb-0">Ratings : </p>
+                                                <div class="min-w-fit-content ms-2">
+                                                    <span class="text-warning"><i class="bi bi-star-fill"></i></span>
+                                                    <span class="text-warning"><i class="bi bi-star-fill"></i></span>
+                                                    <span class="text-warning"><i class="bi bi-star-fill"></i></span>
+                                                    <span class="text-warning"><i class="bi bi-star-fill"></i></span>
+                                                    <span class="text-warning"><i class="bi bi-star-half"></i></span>
+                                                </div>
+                                                {% comment %} <a href="javascript:void(0);"
+                                                    class="ms-1 min-w-fit-content text-muted">
+                                                    <span>(142)</span>
+                                                    <span>Ratings</span>
+                                                </a> {% endcomment %}
+                                            </div> -->
+                                            <div class="d-flex fs-14 mt-3">
+                                                <div>
+                                                    <p class="mb-1"><i class="bi bi-geo-alt me-2"></i>{{ talent.talent_location }}</p>
+                                                    {% for experience in experience %}
+                                                    <p><i class="bi bi-briefcase me-2"></i>Experience - {{ experience.start_date }} - {{ experience.end_date }} {% endfor %}</p>
+                                                </div>
+                                                <div class="ms-4">
+                                                    <p class="mb-1"><i class="bi bi-coin me-2"></i>Package (Yearly) :
+                                                        <span class="fw-semibold" data-bs-toggle="tooltip"
+                                                            data-bs-original-title="Current Salary">$10,000</span> -
+                                                        <span class="fw-semibold" data-bs-toggle="tooltip"
+                                                            data-bs-original-title="Expected Salary">$20,000</span>
+                                                    </p>
+                                                    {% for education in education %} <p><i
+                                                            class="bi bi-mortarboard me-2"></i>Graduate : {{ education.degree }} </p>{% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="popular-tags">
+                                                <a href="javascript:void(0);"
+                                                    class="badge rounded-pill bg-info-transparent"><i
+                                                        class="bi bi-moon-stars me-1"></i>{{ talent.talent_employment_type}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-list">
+                                        <a href="javascript:void(0);" class="btn btn-success"><i
+                                                class="bi bi-check me-1"></i> Placed</a>
+                                        {% comment %} <a href="javascript:void(0);"
+                                            class="btn btn-icon btn-primary-light btn-wave waves-effect waves-light">
+                                            <i class="ri-heart-line fs-13"></i>
+                                        </a>
+                                        <a href="javascript:void(0);"
+                                            class="btn btn-icon btn-primary-light btn-wave waves-effect waves-light">
+                                            <i class="ri-share-line"></i>
+                                        </a> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card custom-card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h5 class="mb-0 fw-semibold fs-22">
+                                    Candidate Profile Information
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card-body p-0 candidate-edu-timeline">
+                            {% comment %} {% for talent in talents %} {% endcomment %}
+                            <div class="p-4 border-bottom">
+                                <h5 class="fw-semibold fs-17 d-flex align-items-center gap-2"><span
+                                        class="avatar avatar-rounded bg-primary avatar-sm"><i
+                                            class="bi bi-briefcase fs-13"></i></span> Career Objective :</h5>
+                                <div class="ms-4 ps-3">
+                                    <p class="op-9">{{ talent.talent_career_objective }}</p>
+                                </div>
+                            </div>
+                            <div class="p-4 border-bottom">
+                                <h5 class="fw-semibold fs-17 d-flex align-items-center gap-2"><span
+                                        class="avatar avatar-rounded bg-primary avatar-sm"><i
+                                            class="bi bi-award fs-13"></i></span> Certifications :</h5>
+                                <div class="ms-4 ps-3">
+                                    <p class="fw-semibold fs-14 mb-0">{{ talent.talent_certifications }}</p>
+                                </div>
+                            </div>
+                            {% comment %} {% endfor %} {% endcomment %}
+                        </div>
+                        <div class="p-4 border-bottom">
+                            <h5 class="fw-semibold fs-17 d-flex align-items-center gap-2">
+                                <span class="avatar avatar-rounded bg-primary avatar-sm"><i class="bi bi-mortarboard fs-13"></i></span> Education :                                     
+                            </h5>                        
+                             <ul>
+                                {% for education_item in education %}
+                                    <li>                                       
+                                         <p class="fw-semibold fs-14 mb-0">{{ education_item.degree }}</p>
+                                            <div class="d-flex gap-2">
+                                                <p class="mb-0">{{ education_item.college_name }}</p>
+                                                <p class="mb-0 text-muted"><i class="bi bi-geo-alt fs-12"></i>{{ education_item.college_location }}</p>
+                                            </div>
+                                        
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                      
+                    </div>
+                    <div class="card custom-card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h5 class="mb-0 fw-semibold">Experience Overview</h5>
+                            </div>
+                        </div>
+                        <div class="card-body p-0 candidate-edu-timeline">
+                          
+                            <div class="p-4 border-bottom">
+                                <h5 class="fw-semibold fs-17 d-flex align-items-center gap-2"><span
+                                        class="avatar avatar-rounded bg-primary avatar-sm"><i
+                                            class="bi bi-briefcase fs-13"></i></span> Experience :</h5>
+                                <div class="ms-4 ps-3">
+                                    <ul>
+                                        {% for experience_item in experience %}
+                                            <li>
+                                                <p class="fw-semibold fs-14 mb-0">{{ experience_item.start_date }} - {{ experience_item.end_date }}</p>
+                                                <div class="d-flex gap-2">
+                                                    <p>{{ experience_item.company_name }}</p>
+                                                    <p class="mb-0 fs-12 text-muted"><i class="bi bi-geo-alt fs-11"></i>{{ experience_item.company_location }}</p>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="col-xxl-12 col-xl-12">
+                        <div class="card custom-card card-bg-light">
+                            <a href="javascript:void(0);" class="card-anchor"></a>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0 text-center">
+                                    <h6 class="text-fixed-white">Query Raised Count: {{ query_count }}</h6>
+                                    <p class="text-fixed-white">Reason: {{ query_reason }}</p>
+                                    <p class="text-fixed-white">Date of Query Raised: {{ query_date }}</p>
+                                    <p class="text-danger">Enable on Next Version</p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card custom-card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                Skills
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="popular-tags">
+                                {% for skill in talent_skills_list %}
+                                <span class="badge bg-secondary-transparent">{{ skill }}</span>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card custom-card overflow-hidden">
+                        <div class="card-header">
+                            <div class="card-title">
+                                Personal Information
+                            </div>
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="table-responsive">
+                                <table class="table table-responsive table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td class="w-50">
+                                                <span class="fw-semibold">Full Name</span>
+                                            </td>
+                                            <td>: {{ talent.talent_name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w-50">
+                                                <span class="fw-semibold">Email</span>
+                                            </td>
+                                            <td>: {{ talent.talent_email }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w-50">
+                                                <span class="fw-semibold">Date of Birth</span>
+                                            </td>
+                                            <td>: {{ talent.talent_date_of_birth }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w-50">
+                                                <span class="fw-semibold">Gender</span>
+                                            </td>
+                                            <td>: {{ talent.talent_gender }}</td>
+                                        </tr>
+                                        {% comment %} <tr>
+                                            <td class="w-50">
+                                                <span class="fw-semibold">Age</span>
+                                            </td>
+                                            <td>: 35</td>
+                                        </tr> {% endcomment %}
+                                        <tr>
+                                            <td class="w-50">
+                                                <span class="fw-semibold">Mobile </span>
+                                            </td>
+                                            <td>: {{ talent.talent_phone_number }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="w-50">
+                                                <span class="fw-semibold">Address</span>
+                                            </td>
+                                            <td>: {{ talent.talent_address }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex align-items-center">
+                                <p class="fs-15 mb-0 me-4 fw-semibold">Social :</p>
+                                <div class="btn-list mb-0">
+                                    <button
+                                        class="btn btn-sm btn-icon btn-primary-light btn-wave waves-effect waves-light mb-xxl-0">
+                                        <i class="ri-facebook-line"></i>
+                                    </button>
+                                    <button
+                                        class="btn btn-sm btn-icon btn-secondary-light btn-wave waves-effect waves-light mb-xxl-0">
+                                        <i class="ri-twitter-line"></i>
+                                    </button>
+                                    <button
+                                        class="btn btn-sm btn-icon btn-warning-light btn-wave waves-effect waves-light mb-xxl-0">
+                                        <i class="ri-instagram-line"></i>
+                                    </button>
+                                    <button
+                                        class="btn btn-sm btn-icon btn-success-light btn-wave waves-effect waves-light mb-xxl-0">
+                                        <i class="ri-github-line"></i>
+                                    </button>
+                                    <button
+                                        class="btn btn-sm btn-icon btn-danger-light btn-wave waves-effect waves-light mb-xxl-0">
+                                        <i class="ri-youtube-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container"> <span class="text-muted"> Copyright © <span id="year">2024</span>. Designed with
+                    <span class="bi bi-heart-fill text-danger"></span> by <a href="javascript:void(0);"> <span
+                            class="fw-semibold text-primary text-decoration-underline">Touchmark Descience</span> </a>
+                    All
+                    rights
+                    reserved </span>
+            </div>
+        </footer> <!-- Footer End -->
+    </div>
+    </div>
+</body>
+<script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#filterToggle").click(function () {
+            $("#filterOptions").toggle();
+        });
+    });
+</script>
+
+</html>

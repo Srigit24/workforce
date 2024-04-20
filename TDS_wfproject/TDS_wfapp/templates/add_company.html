@@ -1,0 +1,348 @@
+<!DOCTYPE html><!-- saved from url=(0014)about:internet -->
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
+    data-menu-styles="dark" data-toggled="close">
+
+
+<head><!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Workforce - Company</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://spruko.com/demo/ynex/dist/static/images/brand-logos/favicon.ico" type="image/x-icon">
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script> <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script> <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet"> <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet"> <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet"> <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet"> <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/css/icons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/styles.min.css">
+    <link rel="stylesheet" href="../static/libs/%40simonwep/pickr/themes/nano.min.css"> <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/static/styles/choices.min.css">
+
+</head>
+
+<body>
+
+    <div class="page"> <!-- app-header -->
+        <header class="app-header"> <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid"> <!-- Start::header-content-left -->
+                <div class="header-content-left"> <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo"> <a href="index.html" class="header-logo"> <img
+                                    src="../static/images/Workforce_logo_white.png" alt="logo"
+                                    class="toggle-dark"> </a> </div>
+                    </div> <!-- End::header-element -->
+                </div> <!-- End::main-header-container -->
+                <!-- Start:Profile at Topbar -->
+                <div class="header-element"> <!-- Start::header-link|dropdown-toggle --> <a href="javascript:void(0);"
+                        class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <div class="me-sm-2 me-0"> <img src="../static/images/adminprofile.jpg" alt="img" width="32"
+                                    height="32" class="rounded-circle"> </div>
+                            <div class="d-sm-block d-none">
+                                <p class="fw-semibold mb-0 lh-1">Info</p><span class="op-7 fw-normal d-block fs-11">Role
+                                    - Admin</span>
+                            </div>
+                        </div>
+                    </a> <!-- End::header-link|dropdown-toggle -->
+                    <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
+                        aria-labelledby="mainHeaderProfile">
+                        <li><a class="dropdown-item d-flex" href="profile.html"><i
+                                    class="ti ti-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
+                        <li><a class="dropdown-item d-flex" href="sign-in-cover.html"><i
+                                    class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</a></li>
+                    </ul>
+                </div>
+                <!-- End: -->
+        </header> <!-- /app-header --> <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar"> <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header"> <a href="index.html" class="header-logo"><img
+                        src="../static/images/Workforce_logo_white.png" alt="logo" class="desktop-dark"> </a>
+            </div>
+            <!-- End::main-sidebar-header --> <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: -8px 0px -80px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 8px 0px 80px;">
+                                      <!-- Start::nav -->
+                                    <nav class="main-menu-container nav nav-pills flex-column sub-open open active">
+                                        <ul class="main-menu"
+                                            style="display: block; margin-left: 0px; margin-right: 0px;">
+                                            <li class="slide">
+                                                <a href="{% url 'dashboard' %}" class="side-menu__item">
+                                                    <i class="bi bi-speedometer side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Dashboard</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_company' %}" class="side-menu__item active">
+                                                    <i class="bi bi-briefcase side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Companies</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_recruiters' %}" class="side-menu__item">
+                                                    <i class="bi bi-award side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Recruiters</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_talent' %}" class="side-menu__item ">
+                                                    <i class="bi-people side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Talent</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_jobs' %}" class="side-menu__item ">
+                                                    <i class="bi-joystick side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Jobs</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_meetings' %}" class="side-menu__item">
+                                                    <i class="bi-calendar side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Meetings</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav> <!-- End::nav -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-placeholder" style="width: auto; height: 1200px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar"
+                        style="width: 0px; display: none; transform: translate3d(0px, 0px, 0px);">
+                    </div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 142px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                </div>
+            </div> <!-- End::main-sidebar -->
+        </aside> <!-- End::app-sidebar -->
+        <!-- Start::app-content -->
+
+        <div class="main-content app-content p-4">
+            <div class="row">
+                <div class="col-xl-6">
+                    <h1 class="page-title fw-semibold fs-18 mb-0">Companies</h1>
+                    <nav>
+                        <ol class="breadcrumb breadcrumb-style2 mt-2">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                        class="ti ti-home-2 me-1 fs-15 d-inline-block"></i>Home</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                        class="ti ti-briefcase me-1 fs-15 d-inline-block"></i>Companies</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Add</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-xl-6 text-end">
+                    <a href="{% url 'list_company' %}" class="btn btn-sm btn-warning-light">Back</i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card custom-card mt-4">
+                        <div class="card-header justify-content-between">
+                            <div class="card-title"> Add New Company Details
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form class="row g-3 p-4 needs-validation" novalidate="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" name="company_name"
+                                            placeholder="Enter the name of the company" required>
+                                        <label for="floatingInput">Name of the
+                                            Company</label>
+                                            <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput"
+                                            name="company_contact_person_name"
+                                            placeholder="Enter the service provided by company" required>
+                                        <label for="floatingInput">Consern Person Name</label>
+                                        <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="textarea" class="form-control" id="floatingInput"
+                                            name="company_description"
+                                            placeholder="Enter the service provided by company" required>
+                                        <label for="floatingInput">Description</label>
+                                        <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput"
+                                            name="company_service_provided"
+                                            placeholder="Enter the service provided by company" required>
+                                        <label for="floatingInput"> Service Provided</label>
+                                        <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="companySize validationCustom04" name="company_size" required>
+                                            <option value="">Select any one</option>
+                                            <option value="0-30">0 - 30</option>
+                                            <option value="Below 100">Below 100</option>
+                                            <option value="100-500">100 - 500</option>
+                                            <option value="Above 500">Above 500</option>
+                                        </select>
+                                        <label for="companySize">Company Size</label>
+                                        <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInput"
+                                            name="company_contact_email" placeholder="Enter the email address" required>
+                                        <label for="floatingInput"> Email Address</label>
+                                        <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="tel" class="form-control" id="floatingInput"
+                                            name="company_contact_phone_number" placeholder="Enter the mobile number" required>
+                                        <label for="floatingInput"> Mobile Number</label>
+                                        <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput"
+                                            name="company_location" placeholder="Enter the location" required>
+                                        <label for="floatingInput">Country</label>
+                                        <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput validationCustom03"
+                                            name="company_address" placeholder="Enter the service provided by company" required>
+                                        <label for="floatingInput">Address</label>
+                                        <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">                                   
+                                        <input type="file" name="company_image" id="id_company_image" class="form-control" required>
+                                        <div class="text-info text-left">Upload the logo less than 1 MB</div>     
+                                        <div class="invalid-feedback">This field is required</div>                               
+                                </div>
+                                <hr>
+                                <h5>Social Media</h5>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 ">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Website URL"
+                                            id="company_website" name="company_website">
+                                        <span class="input-group-text"><i class="bi bi-globe"></i></span>
+                                    </div>
+                                    <div class="text-danger text-center">Format - www.example.com</div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="LinkedIn Profile URL"
+                                            id="company_Linkedin" name="company_Linkedin">
+                                        <span class="input-group-text"><i class="bi bi-linkedin"></i></span>
+                                        <div class="text-danger text-center">Format -
+                                            https://www.linkedin.com/in/Yourcompanyname</div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Instagram Profile URL"
+                                            id="company_instagram" name="company_instagram">
+                                        <span class="input-group-text"><i class="bi bi-instagram"></i></span>
+                                        <div class="text-danger text-center">Format -
+                                            https://www.instagram.com/InsertUsernameHere</div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Facebook Profile URL"
+                                            id="company_facebook" name="company_facebook">
+                                        <span class="input-group-text"><i class="bi bi-facebook"></i></span>
+                                        <div class="text-danger text-center">Format -
+                                            https://www.facebook.com/InsertUsernameHere</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button class="btn btn-outline-dark rounded-pill btn-wave waves-effect waves-light"
+                                        type="submit">Reset</button>
+                                    <button class="btn btn-success rounded-pill btn-wave waves-effect waves-light"
+                                        type="submit" id="liveAlertBtn">Create</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End::app-content -->
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container"> <span class="text-muted"> Copyright © <span id="year">2024</span>. Designed with
+                    <span class="bi bi-heart-fill text-danger"></span> by <a href="javascript:void(0);"> <span
+                            class="fw-semibold text-primary text-decoration-underline">Touchmark Descience</span> </a>
+                    All
+                    rights
+                    reserved </span>
+            </div>
+        </footer> <!-- Footer End -->
+    </div>
+
+</body>
+<script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<!-- FLATPICKR JS -->
+<script src="../static/js/date-picker.min.js"></script>
+<script src="../static/libs/flatpickr/flatpickr.min.js"></script>
+<script src="../static/js/defaultmenu.min.js"></script>
+<script src="../static/libs/node-waves/waves.min.js"></script>
+<script src="../static/js/nouislider.min.js"></script>
+<script src="../static/js/job-search-candidate.js"></script>
+<script src="../static/js/jobs-post.js"></script>
+<script src="../static/js/wNumb.js"></script>
+<script src="../static/js/custom.js"></script>
+<script src="../static/js/choice.js"></script>
+<script src="https://spruko.com/demo/ynex/dist/assets/js/choices.js"></script>
+<script src="../static/js/main.js"></script>
+<script src="../static/js/validation.js"></script>
+<script src="../static/js/custom-switcher.min.js"></script>
+<script src="../static/js/nouislider.js"></script>
+<script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script>
+<!-- jQuery CDN CHOICES JS-->
+<script src="../static/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+</html>

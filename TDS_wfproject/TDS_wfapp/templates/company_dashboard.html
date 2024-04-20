@@ -1,0 +1,656 @@
+<!DOCTYPE html><!-- saved from url=(0014)about:internet -->
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
+    data-menu-styles="dark" data-toggled="close">
+
+
+<head><!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Company - Workforce</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://spruko.com/demo/ynex/dist/static/images/brand-logos/favicon.ico" type="image/x-icon">
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script> <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script> <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet"> <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet"> <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet"> <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet"> <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/css/icons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/styles.min.css">
+    <link rel="stylesheet" href="../static/libs/%40simonwep/pickr/themes/nano.min.css"> <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/static/styles/choices.min.css">
+
+</head>
+
+<body>
+    <div class="page"> <!-- app-header -->
+        <header class="app-header"> <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid"> <!-- Start::header-content-left -->
+                <div class="header-content-left"> <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo"> <a href="index.html" class="header-logo"> <img
+                                    src="../static/images/Workforce_logo_white.png" alt="logo" class="toggle-dark"> </a>
+                        </div>
+                    </div> <!-- End::header-element -->
+                </div> <!-- End::main-header-container -->
+                <!-- Start:Profile at Topbar -->
+                <div class="header-element"> <!-- Start::header-link|dropdown-toggle --> <a href="javascript:void(0);"
+                        class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <div class="me-sm-2 me-0"> <img src="../static/images/adminprofile.jpg" alt="img" width="32"
+                                    height="32" class="rounded-circle"> </div>
+                            <div class="d-sm-block d-none">
+                                <p class="fw-semibold mb-0 lh-1">Info</p><span class="op-7 fw-normal d-block fs-11">Role
+                                    - Admin</span>
+                            </div>
+                        </div>
+                    </a> <!-- End::header-link|dropdown-toggle -->
+                    <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
+                        aria-labelledby="mainHeaderProfile">
+                        <li><a class="dropdown-item d-flex" href="profile.html"><i
+                                    class="ti ti-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
+                        <li><a class="dropdown-item d-flex" href="sign-in-cover.html"><i
+                                    class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</a></li>
+                    </ul>
+                </div>
+                <!-- End: -->
+        </header> <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar"> <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header"> <a href="index.html" class="header-logo"><img
+                        src="../static/images/Workforce_logo_white.png" alt="logo" class="desktop-dark"> </a>
+            </div>
+            <!-- End::main-sidebar-header --> <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: -8px 0px -80px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 8px 0px 80px;">
+                                    <!-- Start::nav -->
+                                    <nav class="main-menu-container nav nav-pills flex-column sub-open open active">
+                                        <ul class="main-menu"
+                                            style="display: block; margin-left: 0px; margin-right: 0px;">
+                                            <li class="slide">
+                                                <a href="{% url 'dashboard' %}" class="side-menu__item active">
+                                                    <i class="bi bi-speedometer side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Dashboard</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_company' %}" class="side-menu__item">
+                                                    <i class="bi bi-briefcase side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Companies</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_recruiters' %}" class="side-menu__item ">
+                                                    <i class="bi bi-award side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Recruiters</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_talent' %}" class="side-menu__item ">
+                                                    <i class="bi-people side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Talent</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_jobs' %}" class="side-menu__item">
+                                                    <i class="bi-joystick side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Jobs</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_meetings' %}" class="side-menu__item">
+                                                    <i class="bi-calendar side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Meetings</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav> <!-- End::nav -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-placeholder" style="width: auto; height: 1200px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar"
+                        style="width: 0px; display: none; transform: translate3d(0px, 0px, 0px);">
+                    </div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 142px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                </div>
+            </div> <!-- End::main-sidebar -->
+        </aside> <!-- End::app-sidebar --> <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container"> <!-- Page Header -->
+                <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
+                    <h1 class="page-title fw-semibold fs-18 mb-0">HRM</h1>
+                    <div class="ms-md-1 ms-0">
+                        <nav>
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboards</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">HRM</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div> <!-- Page Header Close --> <!-- Start::row-1 -->
+                <div class="row">
+                    <div class="col-xxl-5 col-xl-12">
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="card custom-card hrm-main-card primary">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-top">
+                                            <div class="me-3"> <span class="avatar bg-primary"> <i
+                                                        class="ri-team-line fs-18"></i> </span> </div>
+                                            <div class="flex-fill"> <span
+                                                    class="fw-semibold text-muted d-block mb-2">Hired Talents</span>
+                                                <h5 class="fw-semibold mb-2">22,124</h5>
+                                                <p class="mb-0"> <span class="badge bg-primary-transparent">This
+                                                        Month</span> </p>
+                                            </div>
+                                            <div> <span class="fs-14 fw-semibold text-success">+1.03%</span> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="card custom-card hrm-main-card secondary">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-top">
+                                            <div class="me-3"> <span class="avatar bg-secondary"> <i
+                                                        class="ri-user-unfollow-line fs-18"></i> </span> </div>
+                                            <div class="flex-fill"> <span
+                                                    class="fw-semibold text-muted d-block mb-2">Completed JD's</span>
+                                                <h5 class="fw-semibold mb-2">528</h5>
+                                                <p class="mb-0"> <span class="badge bg-secondary-transparent">This
+                                                        Month</span> </p>
+                                            </div>
+                                            <div> <span class="fs-14 fw-semibold text-success">+0.36%</span> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="card custom-card  hrm-main-card warning">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-top">
+                                            <div class="me-3"> <span class="avatar bg-warning"> <i
+                                                        class="ri-service-line fs-18"></i> </span> </div>
+                                            <div class="flex-fill"> <span
+                                                    class="fw-semibold text-muted d-block mb-2">Total Jobs Posted</span>
+                                                <h5 class="fw-semibold mb-2">8,289</h5>
+                                                <p class="mb-0"> <span class="badge bg-warning-transparent">This
+                                                        Month</span> </p>
+                                            </div>
+                                            <div> <span class="fs-14 fw-semibold text-danger">-1.28%</span> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="card custom-card  hrm-main-card danger">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-top">
+                                            <div class="me-3"> <span class="avatar bg-danger"> <i
+                                                        class="ri-contacts-line fs-18"></i> </span> </div>
+                                            <div class="flex-fill"> <span
+                                                    class="fw-semibold text-muted d-block mb-2">Pending JD's</span>
+                                                <h5 class="fw-semibold mb-2">1,453</h5>
+                                                <p class="mb-0"> <span class="badge bg-danger-transparent">This
+                                                        Month</span> </p>
+                                            </div>
+                                            <div> <span class="fs-14 fw-semibold text-success">+4.25%</span> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="card custom-card">
+                                    <div class="card-header">
+                                        <div class="card-title">Applicants Summary</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row gy-md-0 gy-3">
+                                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                                <div class="d-flex align-items-top">
+                                                    <div class="me-3"> <span
+                                                            class="avatar avatar-rounded bg-light text-primary"> <i
+                                                                class="ti ti-files fs-18"></i> </span> </div>
+                                                    <div> <span class="d-block mb-1 text-muted">New
+                                                            Applicants</span>
+                                                        <h6 class="fw-semibold mb-0">2,981</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                                <div class="d-flex align-items-top">
+                                                    <div class="me-3"> <span
+                                                            class="avatar avatar-rounded bg-light text-secondary">
+                                                            <i class="ti ti-file-check fs-18"></i> </span> </div>
+                                                    <div> <span class="d-block mb-1 text-muted">Selected
+                                                            Candidates</span>
+                                                        <h6 class="fw-semibold mb-0">2,981</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                                <div class="d-flex align-items-top">
+                                                    <div class="me-3"> <span
+                                                            class="avatar avatar-rounded bg-light text-warning"> <i
+                                                                class="ti ti-file-dislike fs-18"></i> </span> </div>
+                                                    <div> <span class="d-block mb-1 text-muted">Rejected
+                                                            Candidates</span>
+                                                        <h6 class="fw-semibold mb-0">2,981</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7 col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                <div class="card-title">Upcoming Meetings</div>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled timeline-widget mb-0 my-3">
+                                    <li class="timeline-widget-list">
+                                        <div class="d-flex align-items-top">
+                                            <div class="me-5 text-center"> <span
+                                                    class="d-block fs-20 fw-semibold text-primary">02</span> <span
+                                                    class="d-block fs-12 text-muted">Mon</span> </div>
+                                            <div
+                                                class="d-flex flex-wrap flex-fill align-items-top justify-content-between">
+                                                <div>
+                                                    <p class="mb-1 text-truncate timeline-widget-content text-wrap">You
+                                                        have an announcement - Ipsum Est Diam Eirmod</p>
+                                                    <p class="mb-0 fs-12 lh-1 text-muted">10:00AM<span
+                                                            class="badge bg-primary-transparent ms-2">Level-1</span>
+                                                    </p>
+                                                </div>
+                                                <div class="dropdown"> <a aria-label="anchor" href="javascript:void(0);"
+                                                        class="p-2 fs-16 text-muted" data-bs-toggle="dropdown"> <i
+                                                            class="fe fe-more-vertical"></i> </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);">Action</a></li>
+                                                        <li><a class="dropdown-item" href="javascript:void(0);">Another
+                                                                action</a></li>
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);">Something else here</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-widget-list">
+                                        <div class="d-flex align-items-top">
+                                            <div class="me-5 text-center"> <span
+                                                    class="d-block fs-20 fw-semibold text-primary">15</span> <span
+                                                    class="d-block fs-12 text-muted">Sun</span> </div>
+                                            <div
+                                                class="d-flex flex-wrap flex-fill align-items-top justify-content-between">
+                                                <div>
+                                                    <p class="mb-1 text-truncate timeline-widget-content text-wrap">
+                                                        National holiday - Vero Jayanti</p>
+                                                    <p class="mb-0 fs-12 lh-1 text-muted"><span
+                                                            class="badge bg-warning-transparent">Level-2</span></p>
+                                                </div>
+                                                <div class="dropdown"> <a aria-label="anchor" href="javascript:void(0);"
+                                                        class="p-2 fs-16 text-muted" data-bs-toggle="dropdown"> <i
+                                                            class="fe fe-more-vertical"></i> </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);">Action</a></li>
+                                                        <li><a class="dropdown-item" href="javascript:void(0);">Another
+                                                                action</a></li>
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);">Something else here</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-widget-list">
+                                        <div class="d-flex align-items-top">
+                                            <div class="me-5 text-center"> <span
+                                                    class="d-block fs-20 fw-semibold text-primary">23</span> <span
+                                                    class="d-block fs-12 text-muted">Mon</span> </div>
+                                            <div
+                                                class="d-flex flex-wrap flex-fill align-items-top justify-content-between">
+                                                <div>
+                                                    <p class="mb-1 text-truncate timeline-widget-content text-wrap">John
+                                                        pup birthday - Team Member</p>
+                                                    <p class="mb-4 fs-12 lh-1 text-muted">09:00AM<span
+                                                            class="badge bg-success-transparent ms-2">Final Round</span>
+                                                    </p>
+                                                    <p class="mb-1 text-truncate timeline-widget-content text-wrap">Amet
+                                                        sed no dolor kasd - Et Dolores Tempor Erat</p>
+                                                    <p class="mb-0 fs-12 lh-1 text-muted">04:00PM<span
+                                                            class="badge bg-primary-transparent ms-2">Level 2 - Technincal</span>
+                                                    </p>
+                                                </div>
+                                                <div class="dropdown"> <a aria-label="anchor" href="javascript:void(0);"
+                                                        class="p-2 fs-16 text-muted" data-bs-toggle="dropdown"> <i
+                                                            class="fe fe-more-vertical"></i> </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);">Action</a></li>
+                                                        <li><a class="dropdown-item" href="javascript:void(0);">Another
+                                                                action</a></li>
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);">Something else here</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-widget-list">
+                                        <div class="d-flex align-items-top">
+                                            <div class="me-5 text-center"> <span
+                                                    class="d-block fs-20 fw-semibold text-primary">31</span> <span
+                                                    class="d-block fs-12 text-muted">Tue</span> </div>
+                                            <div
+                                                class="d-flex flex-wrap flex-fill align-items-top justify-content-between">
+                                                <div>
+                                                    <p class="mb-1 text-truncate timeline-widget-content text-wrap">
+                                                        National Holiday - Dolore Ipsum</p>
+                                                    <p class="mb-0 fs-12 lh-1 text-muted"><span
+                                                            class="badge bg-info-transparent">Level-3</span></p>
+                                                </div>
+                                                <div class="dropdown"> <a aria-label="anchor" href="javascript:void(0);"
+                                                        class="p-2 fs-16 text-muted" data-bs-toggle="dropdown"> <i
+                                                            class="fe fe-more-vertical"></i> </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);">Action</a></li>
+                                                        <li><a class="dropdown-item" href="javascript:void(0);">Another
+                                                                action</a></li>
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);">Something else here</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--End::row-1 --> <!-- Start::row-2 -->
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between flex-wrap">
+                                <div class="card-title">JD's Summary</div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <div class="me-3"> <input class="form-control form-control-sm" type="text"
+                                            placeholder="Search Here" aria-label=".form-control-sm example"> </div>
+                                    <div class="dropdown"> <a href="javascript:void(0);"
+                                            class="btn btn-primary btn-sm btn-wave waves-effect waves-light"
+                                            data-bs-toggle="dropdown" aria-expanded="false"> Sort By<i
+                                                class="ri-arrow-down-s-line align-middle ms-1 d-inline-block"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a class="dropdown-item" href="javascript:void(0);">New</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Popular</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Relevant</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover text-nowrap table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">S.No</th>
+                                                <th scope="col">JD-ID</th>
+                                                <th scope="col">Talent</th>
+                                                <th scope="col">Due Date</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>#JD1234</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2"> <span
+                                                                class="avatar avatar-md avatar-rounded"> <img
+                                                                    src="../static/images/adminprofile.jpg" alt="">
+                                                            </span> </div>
+                                                        <div> <span class="d-block fw-semibold mb-1">Rena
+                                                                Mark</span> <span
+                                                                class="text-muted fs-12">renamark123@demo</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td> 14-05-2023 </td>
+                                                <td> <span class="badge bg-warning">Pending</span> </td>
+                                                <td>
+                                                    <div class="btn-list"> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-sm btn-icon btn-info-light"><i
+                                                                class="ri-pencil-line"></i></a> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-icon btn-sm btn-danger-light"><i
+                                                                class="ri-delete-bin-line"></i></a> </div>
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td>2</td>
+                                                <td>#JD2134</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2"> <span
+                                                                class="avatar avatar-md avatar-rounded"> <img
+                                                                    src="../static/images/adminprofile.jpg" alt="">
+                                                            </span> </div>
+                                                        <div> <span class="d-block fw-semibold mb-1">Rena
+                                                                Mark</span> <span
+                                                                class="text-muted fs-12">renamark123@demo</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td> 14-05-2023 </td>
+                                                <td> <span class="badge bg-danger">Rejected</span> </td>
+                                                <td>
+                                                    <div class="btn-list"> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-sm btn-icon btn-info-light"><i
+                                                                class="ri-pencil-line"></i></a> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-icon btn-sm btn-danger-light"><i
+                                                                class="ri-delete-bin-line"></i></a> </div>
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td>3</td>
+                                                <td>#JD7864</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2"> <span
+                                                                class="avatar avatar-md avatar-rounded"> <img
+                                                                    src="../static/images/adminprofile.jpg" alt="">
+                                                            </span> </div>
+                                                        <div> <span class="d-block fw-semibold mb-1">Rena
+                                                                Mark</span> <span
+                                                                class="text-muted fs-12">renamark123@demo</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td> 14-05-2023 </td>
+                                                <td> <span class="badge bg-warning">Pending</span> </td>
+                                                <td>
+                                                    <div class="btn-list"> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-sm btn-icon btn-info-light"><i
+                                                                class="ri-pencil-line"></i></a> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-icon btn-sm btn-danger-light"><i
+                                                                class="ri-delete-bin-line"></i></a> </div>
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td>4</td>
+                                                <td>#JD0974</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2"> <span
+                                                                class="avatar avatar-md avatar-rounded"> <img
+                                                                    src="../static/images/adminprofile.jpg" alt="">
+                                                            </span> </div>
+                                                        <div> <span class="d-block fw-semibold mb-1">Rena
+                                                                Mark</span> <span
+                                                                class="text-muted fs-12">renamark123@demo</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td> 14-05-2023 </td>
+                                                <td> <span class="badge bg-info">In-Review</span> </td>
+                                                <td>
+                                                    <div class="btn-list"> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-sm btn-icon btn-info-light"><i
+                                                                class="ri-pencil-line"></i></a> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-icon btn-sm btn-danger-light"><i
+                                                                class="ri-delete-bin-line"></i></a> </div>
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td>1</td>
+                                                <td>#JD1234</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2"> <span
+                                                                class="avatar avatar-md avatar-rounded"> <img
+                                                                    src="../static/images/adminprofile.jpg" alt="">
+                                                            </span> </div>
+                                                        <div> <span class="d-block fw-semibold mb-1">Rena
+                                                                Mark</span> <span
+                                                                class="text-muted fs-12">renamark123@demo</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td> 14-05-2023 </td>
+                                                <td> <span class="badge bg-warning">In-Progress</span> </td>
+                                                <td>
+                                                    <div class="btn-list"> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-sm btn-icon btn-info-light"><i
+                                                                class="ri-pencil-line"></i></a> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-icon btn-sm btn-danger-light"><i
+                                                                class="ri-delete-bin-line"></i></a> </div>
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td>1</td>
+                                                <td>#JD1234</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2"> <span
+                                                                class="avatar avatar-md avatar-rounded"> <img
+                                                                    src="../static/images/adminprofile.jpg" alt="">
+                                                            </span> </div>
+                                                        <div> <span class="d-block fw-semibold mb-1">Rena
+                                                                Mark</span> <span
+                                                                class="text-muted fs-12">renamark123@demo</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td> 14-05-2023 </td>
+                                                <td> <span class="badge bg-success">Completed</span> </td>
+                                                <td>
+                                                    <div class="btn-list"> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-sm btn-icon btn-info-light"><i
+                                                                class="ri-pencil-line"></i></a> <a aria-label="anchor"
+                                                            href="javascript:void(0);"
+                                                            class="btn btn-icon btn-sm btn-danger-light"><i
+                                                                class="ri-delete-bin-line"></i></a> </div>
+                                                </td>
+                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex align-items-center">
+                                    <div> Showing 6 Entries <i class="bi bi-arrow-right ms-2 fw-semibold"></i>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <nav aria-label="Page navigation" class="pagination-style-4">
+                                            <ul class="pagination mb-0">
+                                                <li class="page-item disabled"> <a class="page-link"
+                                                        href="javascript:void(0);"> Prev </a> </li>
+                                                <li class="page-item active"><a class="page-link"
+                                                        href="javascript:void(0);">1</a></li>
+                                                <li class="page-item"><a class="page-link"
+                                                        href="javascript:void(0);">2</a></li>
+                                                <li class="page-item"> <a class="page-link text-primary"
+                                                        href="javascript:void(0);"> next </a> </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End::row-3 -->
+            </div>
+        </div>
+
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container"> <span class="text-muted"> Copyright © <span id="year">2024</span>. Designed with
+                    <span class="bi bi-heart-fill text-danger"></span> by <a href="javascript:void(0);"> <span
+                            class="fw-semibold text-primary text-decoration-underline">Touchmark Descience</span>
+                    </a>
+                    All
+                    rights
+                    reserved </span>
+            </div>
+        </footer> <!-- Footer End -->
+    </div>
+
+</body>
+<script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</html>

@@ -1,0 +1,1452 @@
+<!DOCTYPE html><!-- saved from url=(0014)about:internet -->
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
+    data-menu-styles="dark" data-toggled="close">
+
+
+<head><!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Workforce - Company</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://spruko.com/demo/ynex/dist/static/images/brand-logos/favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script> <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script> <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet"> <!-- STYLE Css -->
+    <link href="../static/css/icons.css" rel="stylesheet"> <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet"> <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet"> <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/css/icons.css">
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/css/fullcalendar.css"><!-- Fullcalendar CSS -->
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/styles.min.css">
+    <link rel="stylesheet" href="../static/libs/%40simonwep/pickr/themes/nano.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/fullcalendar.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="page"> <!-- app-header -->
+        <header class="app-header"> <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid"> <!-- Start::header-content-left -->
+                <div class="header-content-left"> <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo"> <a href="index.html" class="header-logo"> <img
+                                    src="../static/images/Workforce_logo_white.png" alt="logo"
+                                    class="toggle-dark"> </a> </div>
+                    </div> <!-- End::header-element -->
+                </div> <!-- End::main-header-container -->
+                <!-- Start:Profile at Topbar -->
+                <div class="header-element"> <!-- Start::header-link|dropdown-toggle --> <a href="javascript:void(0);"
+                        class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <div class="me-sm-2 me-0"> <img src="../static/images/adminprofile.jpg" alt="img" width="32"
+                                    height="32" class="rounded-circle"> </div>
+                            <div class="d-sm-block d-none">
+                                <p class="fw-semibold mb-0 lh-1">Info</p><span class="op-7 fw-normal d-block fs-11">Role
+                                    - Admin</span>
+                            </div>
+                        </div>
+                    </a> <!-- End::header-link|dropdown-toggle -->
+                    <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
+                        aria-labelledby="mainHeaderProfile">
+                        <li><a class="dropdown-item d-flex" href="profile.html"><i
+                                    class="ti ti-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
+                        <li><a class="dropdown-item d-flex" href="sign-in-cover.html"><i
+                                    class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</a></li>
+                    </ul>
+                </div>
+                <!-- End: -->
+        </header><!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar"> <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header"> <a href="index.html" class="header-logo"><img
+                        src="../static/images/Workforce_logo_white.png" alt="logo" class="desktop-dark"> </a>
+            </div>
+            <!-- End::main-sidebar-header --> <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: -8px 0px -80px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 8px 0px 80px;">
+                                    <!-- Start::nav -->
+                                    <nav class="main-menu-container nav nav-pills flex-column sub-open open active">
+                                        <ul class="main-menu"
+                                            style="display: block; margin-left: 0px; margin-right: 0px;">
+                                            <li class="slide">
+                                                <a href="{% url 'dashboard' %}" class="side-menu__item">
+                                                    <i class="bi bi-speedometer side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Dashboard</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_company' %}" class="side-menu__item">
+                                                    <i class="bi bi-briefcase side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Companies</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_recruiters' %}" class="side-menu__item">
+                                                    <i class="bi bi-award side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Recruiters</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_talent' %}" class="side-menu__item">
+                                                    <i class="bi bi-people side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Talent</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_jobs' %}" class="side-menu__item">
+                                                    <i class="bi-joystick side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Jobs</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_meetings' %}" class="side-menu__item active">
+                                                    <i class="bi-calendar side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Meetings</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav> <!-- End::nav -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-placeholder" style="width: auto; height: 1200px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar"
+                        style="width: 0px; display: none; transform: translate3d(0px, 0px, 0px);">
+                    </div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 142px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                </div>
+            </div> <!-- End::main-sidebar -->
+        </aside> <!-- End::app-sidebar --> <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container">
+                <!-- Page Header -->
+                <div class="row mt-4">
+                    <div class="col-xl-6">
+                        <h1 class="page-title fw-semibold fs-18 mb-0">Meetings</h1>
+                        <nav>
+                            <ol class="breadcrumb breadcrumb-style2 mt-2">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                            class="ti ti-home-2 me-1 fs-15 d-inline-block"></i>Home</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                            class="ti ti-award me-1 fs-15 d-inline-block"></i>Meetings</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">List</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-xl-6 justify-content-end text-end">
+                        <button class="btn btn-outline-primary rounded-pill btn-wave waves-effect waves-light"
+                            data-bs-toggle="modal" data-bs-target="#addtask"> + Create Meetings
+                        </button>
+                    </div>
+                </div>
+                <!-- Page Header Close --> <!-- Start::row-1 -->
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title"> Upcomings </div>
+                                <div> <button class="btn btn-sm btn-primary-light">View All</button> </div>
+                            </div>
+                            <div class="card-body">
+                                <nav class="nav nav-style-1 nav-pills mb-4 nav-justified" role="tablist"> <a
+                                        class="nav-link px-2 active" data-bs-toggle="tab" role="tab" aria-current="page"
+                                        href="#mon" aria-selected="true" tabindex="-1"> <span
+                                            class="d-block mb-1">09</span>
+                                        <span class="d-block mb-0 op-7 fs-12">Mon</span> </a> <a class="nav-link px-2"
+                                        data-bs-toggle="tab" role="tab" href="#tue" aria-selected="false" tabindex="-1">
+                                        <span class="d-block mb-1">10</span> <span
+                                            class="d-block mb-0 op-7 fs-12">Tue</span>
+                                    </a> <a class="nav-link px-2" data-bs-toggle="tab" role="tab" href="#wed"
+                                        aria-selected="false" tabindex="-1">
+                                        <span class="d-block mb-1">11</span> <span
+                                            class="d-block mb-0 op-7 fs-12">Wed</span>
+                                    </a> <a class="nav-link px-2" data-bs-toggle="tab" role="tab" href="#thu"
+                                        aria-selected="false" tabindex="-1">
+                                        <span class="d-block mb-1">12</span> <span
+                                            class="d-block mb-0 op-7 fs-12">Thu</span>
+                                    </a> <a class="nav-link px-2" data-bs-toggle="tab" role="tab" href="#fri"
+                                        aria-selected="false" tabindex="-1">
+                                        <span class="d-block mb-1">13</span> <span
+                                            class="d-block mb-0 op-7 fs-12">Fri</span>
+                                    </a> <a class="nav-link px-2" data-bs-toggle="tab" role="tab" href="#sat"
+                                        aria-selected="false" tabindex="-1">
+                                        <span class="d-block mb-1">14</span> <span
+                                            class="d-block mb-0 op-7 fs-12">Sat</span>
+                                    </a> <a class="nav-link px-2" data-bs-toggle="tab" role="tab" href="#sun"
+                                        aria-selected="false" tabindex="-1">
+                                        <span class="d-block mb-1">15</span> <span
+                                            class="d-block mb-0 op-7 fs-12">Sun</span>
+                                    </a> </nav>
+                                <div class="tab-content pt-3 my-3">
+                                    <div class="tab-pane show active border-0 p-0" id="mon" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 upcoming-events-list">
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Meeting with client</p>
+                                                        <p class="mb-0 text-muted">Video Conference</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block "></i>9:00am
+                                                            - 10:00am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Lunch with team members</p>
+                                                        <p class="mb-0 text-muted">Dolores Ait Labore Sit</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>12:00pm
+                                                            - 12:45am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">General board meeting</p>
+                                                        <p class="mb-0 text-muted">Golden PArk</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>4:00pm
+                                                            - 5:30pm</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Create New Registration Page</p>
+                                                        <p class="mb-0 text-muted">2UA Project</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>5:00pm
+                                                            - 5:45pm</span> </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane border-0 p-0" id="tue" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 upcoming-events-list">
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Meeting with client</p>
+                                                        <p class="mb-0 text-muted">Video Conference</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>9:00am
+                                                            - 10:00am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Lunch with team members</p>
+                                                        <p class="mb-0 text-muted">Dolores Ait Labore Sit</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>12:00pm
+                                                            - 12:45am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">General board meeting</p>
+                                                        <p class="mb-0 text-muted">Golden PArk</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>4:00pm
+                                                            - 5:30pm</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Create New Registration Page</p>
+                                                        <p class="mb-0 text-muted">2UA Project</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>5:00pm
+                                                            - 5:45pm</span> </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane border-0 p-0" id="wed" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 upcoming-events-list">
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Meeting with client</p>
+                                                        <p class="mb-0 text-muted">Video Conference</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>9:00am
+                                                            - 10:00am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Lunch with team members</p>
+                                                        <p class="mb-0 text-muted">Dolores Ait Labore Sit</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>12:00pm
+                                                            - 12:45am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">General board meeting</p>
+                                                        <p class="mb-0 text-muted">Golden PArk</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>4:00pm
+                                                            - 5:30pm</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Create New Registration Page</p>
+                                                        <p class="mb-0 text-muted">2UA Project</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>5:00pm
+                                                            - 5:45pm</span> </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane border-0 p-0" id="thu" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 upcoming-events-list">
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Meeting with client</p>
+                                                        <p class="mb-0 text-muted">Video Conference</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>9:00am
+                                                            - 10:00am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Lunch with team members</p>
+                                                        <p class="mb-0 text-muted">Dolores Ait Labore Sit</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>12:00pm
+                                                            - 12:45am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">General board meeting</p>
+                                                        <p class="mb-0 text-muted">Golden PArk</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>4:00pm
+                                                            - 5:30pm</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Create New Registration Page</p>
+                                                        <p class="mb-0 text-muted">2UA Project</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>5:00pm
+                                                            - 5:45pm</span> </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane border-0 p-0" id="fri" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 upcoming-events-list">
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Meeting with client</p>
+                                                        <p class="mb-0 text-muted">Video Conference</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>9:00am
+                                                            - 10:00am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Lunch with team members</p>
+                                                        <p class="mb-0 text-muted">Dolores Ait Labore Sit</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>12:00pm
+                                                            - 12:45am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">General board meeting</p>
+                                                        <p class="mb-0 text-muted">Golden PArk</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>4:00pm
+                                                            - 5:30pm</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Create New Registration Page</p>
+                                                        <p class="mb-0 text-muted">2UA Project</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>5:00pm
+                                                            - 5:45pm</span> </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane border-0 p-0" id="sat" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 upcoming-events-list">
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Meeting with client</p>
+                                                        <p class="mb-0 text-muted">Video Conference</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>9:00am
+                                                            - 10:00am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Lunch with team members</p>
+                                                        <p class="mb-0 text-muted">Dolores Ait Labore Sit</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>12:00pm
+                                                            - 12:45am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">General board meeting</p>
+                                                        <p class="mb-0 text-muted">Golden PArk</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>4:00pm
+                                                            - 5:30pm</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Create New Registration Page</p>
+                                                        <p class="mb-0 text-muted">2UA Project</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>5:00pm
+                                                            - 5:45pm</span> </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane border-0 p-0" id="sun" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 upcoming-events-list">
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Meeting with client</p>
+                                                        <p class="mb-0 text-muted">Video Conference</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>9:00am
+                                                            - 10:00am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Lunch with team members</p>
+                                                        <p class="mb-0 text-muted">Dolores Ait Labore Sit</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>12:00pm
+                                                            - 12:45am</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">General board meeting</p>
+                                                        <p class="mb-0 text-muted">Golden PArk</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>4:00pm
+                                                            - 5:30pm</span> </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex align-items-top justify-conent-between">
+                                                    <div class="flex-fill">
+                                                        <p class="mb-0 fs-14">Create New Registration Page</p>
+                                                        <p class="mb-0 text-muted">2UA Project</p>
+                                                    </div>
+                                                    <div> <span class="text-muted"><i
+                                                                class="ri-time-line align-middle me-1 d-inline-block"></i>5:00pm
+                                                            - 5:45pm</span> </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="card custom-card">
+                            <div class="card-body p-0">
+                                <div class="d-flex p-3 align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="fw-semibold mb-0">Tasks</h6>
+                                    </div>
+                                    <div>
+                                        <ul class="nav nav-tabs nav-tabs-header mb-0 d-sm-flex d-block" role="tablist">
+                                            <li class="nav-item m-1" role="presentation"> <a class="nav-link active"
+                                                    data-bs-toggle="tab" role="tab" aria-current="page"
+                                                    href="#all-tasks" aria-selected="true">All Tasks</a> </li>
+                                            <li class="nav-item m-1" role="presentation"> <a class="nav-link"
+                                                    data-bs-toggle="tab" role="tab" aria-current="page" href="#pending"
+                                                    aria-selected="false" tabindex="-1">Pending</a>
+                                            </li>
+                                            <li class="nav-item m-1" role="presentation"> <a class="nav-link"
+                                                    data-bs-toggle="tab" role="tab" aria-current="page"
+                                                    href="#in-progress" aria-selected="false" tabindex="-1">In
+                                                    Progress</a>
+                                            </li>
+                                            <li class="nav-item m-1" role="presentation"> <a class="nav-link"
+                                                    data-bs-toggle="tab" role="tab" aria-current="page"
+                                                    href="#completed" aria-selected="false" tabindex="-1">Completed</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <div class="dropdown"> <button
+                                                class="btn btn-icon btn-sm btn-light btn-wave waves-light waves-effect"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="ti ti-dots-vertical"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="javascript:void(0);">Select
+                                                        All</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">Share
+                                                        All</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">Delete
+                                                        All</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content task-tabs-container">
+                            <div class="tab-pane p-0 active show" id="all-tasks" role="tabpanel">
+                                <div class="row" id="tasks-container">
+                                    <div class="col-xl-4 task-card">
+                                        <div class="card custom-card task-pending-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>New
+                                                            Project Blueprint</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">13,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">20,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/2.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/8.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/2.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/10.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-warning-transparent d-block">High</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card custom-card task-inprogress-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 me-1 text-warning"></i></a>Designing
+                                                            New Authentication Pages</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">26,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">12,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/6.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/15.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-success-transparent d-block">Low</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card custom-card task-completed-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center">
+                                                            <a href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>Developing
+                                                            New Events in Plugin
+                                                        </p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">5,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">10,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/5.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/8.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/11.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-primary-transparent d-block">Medium</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 task-card">
+                                        <div class="card custom-card task-inprogress-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 me-1 text-warning"></i></a>Design
+                                                            New Landing Pages </p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">21,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">28,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/1.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/5.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/12.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-primary-transparent d-block">Medium</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card custom-card task-completed-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>New
+                                                            Plugin Development</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">28,Oct
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">28,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/3.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/8.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/9.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-success-transparent d-block">Low</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card custom-card task-completed-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>Documentation
+                                                            For New Template</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">25,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">10,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/8.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/10.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/11.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-danger-transparent d-block">Critical</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 task-card">
+                                        <div class="card custom-card task-pending-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center">
+                                                            <a href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 me-1 text-warning"></i></a>Updating
+                                                            Old Ui
+                                                        </p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">30,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">05,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/14.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/13.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/21.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/16.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-warning-transparent d-block">High</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card custom-card task-completed-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>Designing
+                                                            Of New Ecommerce Pages</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">1,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">15,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/1.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/3.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/6.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-success-transparent d-block">Low</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card custom-card task-inprogress-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 me-1 text-warning"></i></a>Improving
+                                                            Ui Of Updated Templates</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">4,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">20,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/9.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/13.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-primary-transparent d-block">Medium</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane p-0" id="pending" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-xl-4">
+                                        <div class="card custom-card task-pending-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>New
+                                                            Project Blueprint</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">13,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">20,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/2.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/8.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/2.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/10.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-warning-transparent d-block">High</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="card custom-card task-pending-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center">
+                                                            <a href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 me-1 text-warning"></i></a>Updating
+                                                            Old Ui
+                                                        </p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">30,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">05,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/14.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/13.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/21.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/16.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-warning-transparent d-block">High</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane p-0" id="in-progress" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-xl-4">
+                                        <div class="card custom-card task-inprogress-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 me-1 text-warning"></i></a>Design
+                                                            New Landing Pages </p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">21,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">28,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/1.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/5.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/12.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-primary-transparent d-block">Medium</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="card custom-card task-inprogress-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 me-1 text-warning"></i></a>Designing
+                                                            New Authentication Pages</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">26,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">12,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/6.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/15.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-success-transparent d-block">Low</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="card custom-card task-inprogress-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 me-1 text-warning"></i></a>Improving
+                                                            Ui Of Updated Templates</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">4,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">20,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/9.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/13.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-primary-transparent d-block">Medium</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane p-0" id="completed" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-xl-4">
+                                        <div class="card custom-card task-completed-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>New
+                                                            Plugin Development</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">28,Oct
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">28,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/3.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/8.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/9.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-success-transparent d-block">Low</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="card custom-card task-completed-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>Documentation
+                                                            For New Template</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">25,Nov
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">10,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/8.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/10.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/11.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-danger-transparent d-block">Critical</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="card custom-card task-completed-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center">
+                                                            <a href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>Developing
+                                                            New Events in Plugin
+                                                        </p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">5,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">10,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/5.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/8.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/11.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-primary-transparent d-block">Medium</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="card custom-card task-completed-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                                    <div>
+                                                        <p class="fw-semibold mb-3 d-flex align-items-center"><a
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-star-s-fill fs-16 op-5 me-1 text-muted"></i></a>Designing
+                                                            Of New Ecommerce Pages</p>
+                                                        <p class="mb-3">Assigned On : <span
+                                                                class="fs-12 mb-1 text-muted">1,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-3">Target Date : <span
+                                                                class="fs-12 mb-1 text-muted">15,Dec
+                                                                2022</span>
+                                                        </p>
+                                                        <p class="mb-0">Assigned To : <span
+                                                                class="avatar-list-stacked ms-1">
+                                                                <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/1.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/3.jpg" alt="img">
+                                                                </span> <span class="avatar avatar-sm avatar-rounded">
+                                                                    <img src="../assets/images/faces/6.jpg" alt="img">
+                                                                </span> </span> </p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="btn-list"> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-primary-light waves-effect waves-light"><i
+                                                                    class="ri-edit-line"></i></button> <button
+                                                                class="btn btn-sm btn-icon btn-wave btn-danger-light me-0 waves-effect waves-light"><i
+                                                                    class="ri-delete-bin-line"></i></button>
+                                                        </div> <span
+                                                            class="badge bg-success-transparent d-block">Low</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item disabled"> <a class="page-link">Previous</a> </li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                        <li class="page-item"> <a class="page-link" href="javascript:void(0);">Next</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!--End::row-1 -->
+    </div>
+    <!-- /.modal -->
+
+    <!-- Footer Start -->
+    <footer class="footer mt-auto py-3 bg-white text-center">
+        <div class="container"> <span class="text-muted"> Copyright © <span id="year">2024</span>. Designed with <span
+                    class="bi bi-heart-fill text-danger"></span> by <a href="javascript:void(0);"> <span
+                        class="fw-semibold text-primary text-decoration-underline">Touchmark Descience</span> </a> All
+                rights
+                reserved </span>
+        </div>
+    </footer> <!-- Footer End -->
+
+</body>
+<script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/libs/bootstrap/js/"></script>
+<script src="../static/libs/flatpickr/flatpickr.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/fullcalendar.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#calendar").fullCalendar({
+            header: {
+                left: "prev,next today",
+                center: "title",
+                right: "month,agendaWeek,agendaDay"
+            },
+
+            defaultView: "month",
+            navLinks: true, // can click day/week names to navigate views
+            selectable: true,
+            selectHelper: true,
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+
+            select: function (start, end) {
+                // Display the modal.
+                // You could fill in the start and end fields based on the parameters
+                $(".modal").modal("show");
+                $(".modal")
+                    .find("#title")
+                    .val("");
+                $(".modal")
+                    .find("#starts-at")
+                    .val("");
+                $(".modal")
+                    .find("#ends-at")
+                    .val("");
+                $("#save-event").show();
+                $("input").prop("readonly", false);
+            },
+
+            eventRender: function (event, element) {
+                //dynamically prepend close button to event
+                element
+                    .find(".fc-content")
+                    .prepend("<span class='closeon material-icons'>&#xe5cd;</span>");
+                element.find(".closeon").on("click", function () {
+                    $("#calendar").fullCalendar("removeEvents", event._id);
+                });
+            },
+
+            eventClick: function (calEvent, jsEvent) {
+                // Display the modal and set event values.
+                $(".modal").modal("show");
+                $(".modal")
+                    .find("#title")
+                    .val(calEvent.title);
+                $(".modal")
+                    .find("#starts-at")
+                    .val(calEvent.start);
+                $(".modal")
+                    .find("#ends-at")
+                    .val(calEvent.end);
+                $("#save-event").hide();
+                $("input").prop("readonly", true);
+            }
+        });
+
+        // Bind the dates to datetimepicker.
+        $("#starts-at, #ends-at").datetimepicker();
+
+        //click to save "save"
+        $("#save-event").on("click", function (event) {
+            var title = $("#title").val();
+            if (title) {
+                var eventData = {
+                    title: title,
+                    start: $("#starts-at").val(),
+                    end: $("#ends-at").val()
+                };
+                $("#calendar").fullCalendar("renderEvent", eventData, true); // stick? = true
+            }
+            $("#calendar").fullCalendar("unselect");
+
+            // Clear modal inputs
+            $(".modal")
+                .find("input")
+                .val("");
+            // hide modal
+            $(".modal").modal("hide");
+        });
+
+        $("textarea").autosize();
+    });
+
+</script>
+
+
+</html>

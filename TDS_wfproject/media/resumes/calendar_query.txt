@@ -1,0 +1,83 @@
+$select_price_list_data = sqlQUERY_LABEL("SELECT
+    HOTEL.hotel_id,
+    ROOMS.day_1,
+    ROOMS.day_2,
+    ROOMS.day_3,
+    ROOMS.day_4,
+    ROOMS.day_5,
+    ROOMS.day_6,
+    ROOMS.day_7,
+    ROOMS.day_8,
+    ROOMS.day_9,
+    ROOMS.day_10,
+    ROOMS.day_11,
+    ROOMS.day_12,
+    ROOMS.day_13,
+    ROOMS.day_14,
+    ROOMS.day_15,
+    ROOMS.day_16,
+    ROOMS.day_17,
+    ROOMS.day_18,
+    ROOMS.day_19,
+    ROOMS.day_20,
+    ROOMS.day_21,
+    ROOMS.day_22,
+    ROOMS.day_23,
+    ROOMS.day_24,
+    ROOMS.day_25,
+    ROOMS.day_26,
+    ROOMS.day_27,
+    ROOMS.day_28,
+    ROOMS.day_29,
+    ROOMS.day_30,
+    ROOMS.day_31
+FROM
+    dvi_hotel_room_price_book ROOMS
+LEFT JOIN dvi_hotel HOTEL ON
+    HOTEL.hotel_id = ROOMS.hotel_id
+UNION
+    -- Query for hotel amenities price data
+SELECT
+    HOTEL.hotel_id,
+    AMENITIES.day_1,
+    AMENITIES.day_2,
+    AMENITIES.day_3,
+    AMENITIES.day_4,
+    AMENITIES.day_5,
+    AMENITIES.day_6,
+    AMENITIES.day_7,
+    AMENITIES.day_8,
+    AMENITIES.day_9,
+    AMENITIES.day_10,
+    AMENITIES.day_11,
+    AMENITIES.day_12,
+    AMENITIES.day_13,
+    AMENITIES.day_14,
+    AMENITIES.day_15,
+    AMENITIES.day_16,
+    AMENITIES.day_17,
+    AMENITIES.day_18,
+    AMENITIES.day_19,
+    AMENITIES.day_20,
+    AMENITIES.day_21,
+    AMENITIES.day_22,
+    AMENITIES.day_23,
+    AMENITIES.day_24,
+    AMENITIES.day_25,
+    AMENITIES.day_26,
+    AMENITIES.day_27,
+    AMENITIES.day_28,
+    AMENITIES.day_29,
+    AMENITIES.day_30,
+    AMENITIES.day_31
+FROM
+    dvi_hotel_amenities_price_book AMENITIES
+LEFT JOIN dvi_hotel HOTEL ON
+    HOTEL.hotel_id = AMENITIES.hotel_id") or die("#1-UNABLE_TO_COLLECT_PRICE_LIST:" . sqlERROR_LABEL());
+
+
+
+
+
+
+WITH RoomData AS ( SELECT 'rooms' AS type, hotel_price_book_id AS price_book_id, hotel_id, room_id, year, month, day_1, day_2, day_3, day_4, day_5, day_6, day_7, day_8, day_9, day_10, day_11, day_12, day_13, day_14, day_15, day_16, day_17, day_18, day_19, day_20, day_21, day_22, day_23, day_24, day_25, day_26, day_27, day_28, day_29, day_30, day_31, deleted FROM dvi_hotel_room_price_book WHERE deleted = '0' ), AmenitiesData AS ( SELECT 'amenities' AS type, hotel_amenities_price_book_id AS price_book_id, hotel_id, hotel_amenities_id, pricetype, year, month, day_1, day_2, day_3, day_4, day_5, day_6, day_7, day_8, day_9, day_10, day_11, day_12, day_13, day_14, day_15, day_16, day_17, day_18, day_19, day_20, day_21, day_22, day_23, day_24, day_25, day_26, day_27, day_28, day_29, day_30, day_31 FROM dvi_hotel_amenities_price_book WHERE deleted = '0' ) SELECT * FROM RoomData UNION ALL SELECT * FROM AmenitiesData

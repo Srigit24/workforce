@@ -1,0 +1,473 @@
+<!DOCTYPE html><!-- saved from url=(0014)about:internet -->
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
+    data-menu-styles="dark" data-toggled="close">
+
+
+<head><!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Workforce - Company</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://spruko.com/demo/ynex/dist/static/images/brand-logos/favicon.ico" type="image/x-icon">
+    <!-- Choices JS -->
+
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet"> <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet"> <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet"> <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet"> <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/css/icons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/styles.min.css">
+    <link rel="stylesheet" href="../static/libs/%40simonwep/pickr/themes/nano.min.css"> <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="../static/css/nouislider.min.css">
+    <link rel="stylesheet" href="../static/css/nouslider.css">
+    <link rel="stylesheet" href="../static/libs/prismjs/themes/prism-coy.min.css">
+    <!-- Add this in the <head> section of your HTML -->
+    <link rel="stylesheet" href="../static/css/choices.min.css">
+
+</head>
+
+<body>
+    <div class="page"> <!-- app-header -->
+        <header class="app-header"> <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid"> <!-- Start::header-content-left -->
+                <div class="header-content-left"> <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo"> <a href="index.html" class="header-logo"> <img
+                                    src="../static/images/Workforce_logo_white.png" alt="logo"
+                                    class="toggle-dark"> </a> </div>
+                    </div> <!-- End::header-element -->
+                </div> <!-- End::main-header-container -->
+                <!-- Start:Profile at Topbar -->
+                <div class="header-element"> <!-- Start::header-link|dropdown-toggle --> <a href="javascript:void(0);"
+                        class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <div class="me-sm-2 me-0"> <img src="../static/images/adminprofile.jpg" alt="img" width="32"
+                                    height="32" class="rounded-circle"> </div>
+                            <div class="d-sm-block d-none">
+                                <p class="fw-semibold mb-0 lh-1">Info</p><span class="op-7 fw-normal d-block fs-11">Role
+                                    - Admin</span>
+                            </div>
+                        </div>
+                    </a> <!-- End::header-link|dropdown-toggle -->
+                    <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
+                        aria-labelledby="mainHeaderProfile">
+                        <li><a class="dropdown-item d-flex" href="profile.html"><i
+                                    class="ti ti-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
+                        <li><a class="dropdown-item d-flex" href="sign-in-cover.html"><i
+                                    class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</a></li>
+                    </ul>
+                </div>
+                <!-- End: -->
+        </header><!-- Start::app-sidebar -->
+
+        <aside class="app-sidebar sticky" id="sidebar"> <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header"> <a href="index.html" class="header-logo"><img
+                        src="../static/images/Workforce_logo_white.png" alt="logo" class="desktop-dark"> </a>
+            </div>
+            <!-- End::main-sidebar-header --> <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: -8px 0px -80px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 8px 0px 80px;">
+                                    <!-- Start::nav -->
+                                    <nav class="main-menu-container nav nav-pills flex-column sub-open open active">
+                                        <ul class="main-menu"
+                                            style="display: block; margin-left: 0px; margin-right: 0px;">
+                                            <li class="slide">
+                                                <a href="{% url 'dashboard' %}" class="side-menu__item">
+                                                    <i class="bi bi-speedometer side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Dashboard</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_company' %}" class="side-menu__item">
+                                                    <i class="bi bi-briefcase side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Companies</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_recruiters' %}" class="side-menu__item">
+                                                    <i class="bi bi-award side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Recruiters</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_talent' %}" class="side-menu__item ">
+                                                    <i class="bi-people side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Talent</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_jobs' %}" class="side-menu__item active">
+                                                    <i class="bi-joystick side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Jobs</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_meetings' %}" class="side-menu__item">
+                                                    <i class="bi-calendar side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Meetings</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav> <!-- End::nav -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-placeholder" style="width: auto; height: 1200px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar"
+                        style="width: 0px; display: none; transform: translate3d(0px, 0px, 0px);">
+                    </div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 142px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                </div>
+            </div> <!-- End::main-sidebar -->
+        </aside> <!-- End::app-sidebar --> <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <!-- Page Header -->
+            <div class="container">
+                <!-- Page Header -->
+                <div class="row mt-4">
+                    <div class="col-xl-6">
+                        <h1 class="page-title fw-semibold fs-18 mb-0">Jobs</h1>
+                        <nav>
+                            <ol class="breadcrumb breadcrumb-style2 mt-2">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                            class="ti ti-home-2 me-1 fs-15 d-inline-block"></i>Home</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);"><i
+                                            class="bi bi-joystick me-1 fs-15 d-inline-block"></i>Jobs</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Add</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-xl-6 justify-content-end text-end">
+                        <a href="{% url 'list_jobs' %}"
+                            class="btn btn-outline-warning btn-sm rounded-pill btn-wave waves-effect waves-light">Back
+                            to List</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header Close -->
+            <div class="container"> <!-- Start::row-1 -->
+                <form method="POST" class="row g-3 p-4 needs-validation" novalidate="" action="{% url 'add_jobs' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-xxl-9 col-xl-8">
+                            <div class="card custom-card">
+                                <div class="card-header justify-content-between">
+                                    <div class="card-title"> Post New Job </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row gy-4 mb-4">
+                                        <div class="col-xl-6"> <label for="job_title" class="form-label">Job
+                                                Title</label>
+                                            <input type="text" class="form-control" id="job_title" name="job_title"
+                                                placeholder="Enter the Job Title" required>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label for="job_description_id" class="form-label">Job ID</label>
+                                            <input type="text" class="form-control" id="job_description_id"
+                                                placeholder="Job ID" name="job_description_id" readonly>
+                                        </div>
+
+                                        <div class="col-xl-6">
+                                            <label for="skills" class="form-label">Skills :</label>
+                                            <div class="choices" data-type="select-multiple" aria-expanded="false">
+                                                <input type="text" id="skills" name="skills" class="choices__input"
+                                                    placeholder="Enter skills" autocomplete="off"
+                                                    aria-autocomplete="list" aria-label="Type to search" required>
+                                                <div class="choices__list choices__list--multiple"></div>
+                                                <div class="invalid-feedback">This field is required</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-6">
+                                            <label for="qualifications" class="form-label">Qualifications :</label>
+                                            <div class="choices" data-type="select-multiple" aria-expanded="false">
+                                                <input type="text" id="qualifications" name="qualifications"
+                                                    class="choices__input" placeholder="Enter qualifications"
+                                                    autocomplete="off" aria-autocomplete="list"
+                                                    aria-label="Type to search" required>
+                                                <div class="choices__list choices__list--multiple"></div>
+                                                <div class="invalid-feedback">This field is required</div>
+                                            </div>
+                                        </div>
+
+                                        {% comment %} <div class="col-xl-6">
+                                            <label for="languages" class="form-label">Languages :</label>
+                                            <div class="choices" data-type="select-multiple" aria-expanded="false">
+                                                <input type="text" id="languages_known" name="languages_known"
+                                                    class="choices__input" placeholder="Enter languages"
+                                                    autocomplete="off" aria-autocomplete="list"
+                                                    aria-label="Type to search">
+                                                <div class="choices__list choices__list--multiple"></div>
+                                            </div>
+                                        </div> {% endcomment %}
+                                        <div class="col-xl-6">
+                                            <label class="form-label">Priority</label>
+                                            <select class="form-select" id="job_priority" name="job_priority" required>
+                                                <option selected disabled>Choose One</option>
+                                                {% for choice in priority_choices %}
+                                                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label class="form-label">Salary Range</label>
+                                            <input type="text" class="form-control" id="job_salary_range"
+                                                placeholder="20000 - 30000" name="job_salary_range" required>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label class="form-label">Monthly Incentives</label>
+                                            <select class="form-select" id="job_monthly_incentives"
+                                                name="job_monthly_incentives" required>
+                                                <option selected disabled>Choose One</option>
+                                                {% for incentive in incentive_choices %}
+                                                <option value="{{ incentive }}">{{ incentive }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label class="form-label">Working Days</label>
+                                            <input type="text" class="form-control" id="job_working_days"
+                                                placeholder="4 - days" name="job_working_days" required>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label for="job_location" class="form-label">Job Location</label>
+                                            <input type="text" class="form-control" id="job_location" placeholder=""
+                                                name="job_location" required>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label class="form-label">Vacancies</label>
+                                            <input type="number" class="form-control" id="vacancies"
+                                                placeholder="Enter the vaccany count" name="vacancies" required>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label class="form-label">Experience</label>
+                                            <input type="number" class="form-control" id="job_experience"
+                                                placeholder="Enter the vaccany count" name="job_experience" required>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label for="job-deadline" class="form-label">Job Deadline</label>
+                                            <input type="text" class="form-control flatpickr-input" id="job-deadline"
+                                                name="job-deadline" placeholder="DD/MM/YYYY" required>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label for="job_preffered_shift" class="form-label">Preferred Shift</label>
+                                            <select class="form-select" id="job_preffered_shift"
+                                                name="job_preffered_shift" required>
+                                                <option selected disabled>Choose One</option>
+                                                {% for shift in shift_choices %}
+                                                <option value="{{ shift }}">{{ shift }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label for="job_requirements" class="form-label">Key Requirements</label>
+                                            <input type="text" class="form-control" id="job_requirements" placeholder=""
+                                                name="job_requirements" required>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6"> <label for="job_description" class="form-label">Job
+                                                Description :</label> <textarea class="form-control"
+                                                id="job_description" name="job_description" rows="4"
+                                                placeholder="Enter the Job Description" required></textarea>
+                                                <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                        <div class="col-xl-6"> <label for="job_key_responsibilites"
+                                                class="form-label">Job
+                                                Responsibilites :</label> <textarea class="form-control"
+                                                id="job_key_responsibilites" name="job_key_responsibilites" rows="4"
+                                                placeholder="Enter the Job Description" required></textarea>
+                                                <div class="invalid-feedback">This field is required</div>
+                                        </div>
+
+                                        <div class="col-xl-6">
+                                            <label for="job_employment_type" class="form-label">Work Status</label>
+                                            <select class="form-select" id="job_employment_type"
+                                                name="job_employment_type" required>
+                                                <option selected disabled>Choose One</option>
+                                                {% for status in work_status_choices %}
+                                                <option value="{{ status }}">{{ status }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-end">
+                                    <button type="submit" class="btn btn-primary btn-wave waves-effect waves-light"><i
+                                            class="bi bi-plus-circle"></i> Post Job</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-4">
+                            <div class="card custom-card">
+                                <div class="card-header">
+                                    <div class="card-title">Company Details</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row gy-3">
+                                        <div class="col-xl-12">
+                                            <label for="Company-Name" class="form-label">Company Name</label>
+                                            <!-- Display Companies -->
+                                            <select name="company" id="company" class="form-select" required>
+                                                {% for company in companies %}
+                                                <option value="{{ company.company_id }}">{{ company.company_name }}
+                                                </option>
+                                                {% endfor %}
+                                            </select>
+                                            <div class="invalid-feedback">This field is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card custom-card">
+                                <div class="card-header">
+                                    <div class="card-title">Assign To Recruiter</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="col-xl-12">
+                                        <label class="form-label">Recruiter Name</label>
+                                        <!-- Display Recruiters -->
+                                        <select name="recruiter" id="recruiter" class="form-select" required>
+                                            {% for recruiter in recruiters %}
+                                            <option value="{{ recruiter.recruiter_id }}">{{ recruiter.recruiter_name }}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="invalid-feedback">This field is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- FLATPICKR JS -->
+<script src="../static/libs/flatpickr/flatpickr.min.js"></script>
+<script src="../static/js/defaultmenu.min.js"></script>
+<script src="../static/js/validation.js"></script>
+<script src="../static/libs/node-waves/waves.min.js"></script>
+<script src="../static/js/nouislider.min.js"></script>
+<script src="../static/js/job-search-candidate.js"></script>
+<script src="../static/js/jobs-post.js"></script>
+<script src="../static/js/wNumb.js"></script>
+<script src="../static/js/custom.js"></script>
+<script src="../static/js/choice.js"></script>
+<script src="https://spruko.com/demo/ynex/dist/assets/js/choices.js"></script>
+<script src="../static/js/main.js"></script>
+<script src="../static/js/custom-switcher.min.js"></script>
+<script src="../static/js/nouislider.js"></script>
+
+<!-- jQuery CDN CHOICES JS-->
+<script src="../static/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        flatpickr('#job-deadline', {
+            minDate: 'today'
+            // Set minimum date to today
+        });
+    });
+
+    // Function to generate a random number
+    function getRandomNumber() {
+        return Math.floor(Math.random() * 10000); // Change the range according to your needs
+    }
+
+    // Function to generate the Job ID
+    function generateJobID() {
+        return "JD-" + getRandomNumber();
+    }
+
+    // Set the generated Job ID to the input field
+    document.getElementById('job_description_id').value = generateJobID();
+
+
+    const skillsSelect = new Choices('#skills', {
+        delimiter: ',', // Set the delimiter for multiple values
+        placeholder: true, // Show placeholder text
+        searchEnabled: true, // Enable searching for choices
+        removeItemButton: true, // Enable remove button for selected choices
+    });
+
+    const qualificationsSelect = new Choices('#qualifications', {
+        delimiter: ',', // Set the delimiter for multiple values
+        placeholder: true, // Show placeholder text
+        searchEnabled: true, // Enable searching for choices
+        removeItemButton: true, // Enable remove button for selected choices
+    });
+
+    const languagesSelect = new Choices('#languages', {
+        delimiter: ',', // Set the delimiter for multiple values
+        placeholder: true, // Show placeholder text
+        searchEnabled: true, // Enable searching for choices
+        removeItemButton: true, // Enable remove button for selected choices
+    });
+
+    // Dynamically add skills
+    document.getElementById('addSkillButton').addEventListener('click', function () {
+        const newSkill = prompt("Enter the new skill:");
+        if (newSkill) {
+            skillsSelect.setChoiceByValue(newSkill); // Add the new skill to the input field
+        }
+    });
+
+    // Dynamically add qualifications
+    document.getElementById('addQualificationButton').addEventListener('click', function () {
+        const newQualification = prompt("Enter the new qualification:");
+        if (newQualification) {
+            qualificationsSelect.setChoiceByValue(newQualification); // Add the new qualification to the input field
+        }
+    });
+
+    // Dynamically add languages
+    document.getElementById('addLanguageButton').addEventListener('click', function () {
+        const newLanguage = prompt("Enter the new language:");
+        if (newLanguage) {
+            languagesSelect.setChoiceByValue(newLanguage); // Add the new language to the input field
+        }
+    });
+</script>
+
+</html>

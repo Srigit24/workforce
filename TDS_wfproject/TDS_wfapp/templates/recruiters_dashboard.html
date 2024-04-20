@@ -1,0 +1,824 @@
+<!DOCTYPE html><!-- saved from url=(0014)about:internet -->
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
+    data-menu-styles="dark" data-toggled="close">
+
+
+<head><!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Workforce - Recruiter</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://spruko.com/demo/ynex/dist/static/images/brand-logos/favicon.ico" type="image/x-icon">
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script> <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script> <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet"> <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet"> <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet"> <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet"> <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/css/icons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="../static/icon-fonts/boxicons/css/styles.min.css">
+    <link rel="stylesheet" href="../static/libs/%40simonwep/pickr/themes/nano.min.css"> <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/static/styles/choices.min.css">
+
+</head>
+
+<body>
+    <div class="page"> <!-- app-header -->
+        <header class="app-header"> <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid"> <!-- Start::header-content-left -->
+                <div class="header-content-left"> <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo"> <a href="index.html" class="header-logo"> <img
+                                    src="../static/images/Touchmark_Workforce_logo_white.png" alt="logo"
+                                    class="toggle-dark"> </a> </div>
+                    </div> <!-- End::header-element -->
+                </div> <!-- End::main-header-container -->
+                <!-- Start:Profile at Topbar -->
+                <div class="header-element"> <!-- Start::header-link|dropdown-toggle --> <a href="javascript:void(0);"
+                        class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <div class="me-sm-2 me-0"> <img src="../static/images/adminprofile.jpg" alt="img" width="32"
+                                    height="32" class="rounded-circle"> </div>
+                            <div class="d-sm-block d-none">
+                                <p class="fw-semibold mb-0 lh-1">Info</p><span class="op-7 fw-normal d-block fs-11">Role
+                                    - Admin</span>
+                            </div>
+                        </div>
+                    </a> <!-- End::header-link|dropdown-toggle -->
+                    <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
+                        aria-labelledby="mainHeaderProfile">
+                        <li><a class="dropdown-item d-flex" href="profile.html"><i
+                                    class="ti ti-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
+                        <li><a class="dropdown-item d-flex" href="sign-in-cover.html"><i
+                                    class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</a></li>
+                    </ul>
+                </div>
+                <!-- End: -->
+        </header> <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar"> <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header"> <a href="index.html" class="header-logo"><img
+                        src="../static/images/Touchmark_Workforce_logo_white.png" alt="logo" class="desktop-dark"> </a>
+            </div>
+            <!-- End::main-sidebar-header --> <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: -8px 0px -80px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 8px 0px 80px;">
+                                    <!-- Start::nav -->
+                                    <nav class="main-menu-container nav nav-pills flex-column sub-open open active">
+                                        <ul class="main-menu"
+                                            style="display: block; margin-left: 0px; margin-right: 0px;">
+                                            <li class="slide">
+                                                <a href="{% url 'dashboard' %}" class="side-menu__item active">
+                                                    <i class="bi bi-speedometer side-menu__icon"></i>
+                                                     <span class="side-menu__label" style="margin-top:7px;"> Dashboard</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_company' %}" class="side-menu__item">
+                                                    <i class="bi bi-briefcase side-menu__icon"></i>
+                                                     <span class="side-menu__label" style="margin-top:7px;"> Companies</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_recruiters' %}" class="side-menu__item ">
+                                                    <i class="bi bi-award side-menu__icon"></i>
+                                                     <span class="side-menu__label" style="margin-top:7px;"> Recruiters</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_talent' %}" class="side-menu__item ">
+                                                    <i class="bi-people side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Talent</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_jobs' %}" class="side-menu__item">
+                                                    <i class="bi-joystick side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Jobs</span>
+                                                </a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="{% url 'list_meetings' %}" class="side-menu__item">
+                                                    <i class="bi-calendar side-menu__icon"></i>
+                                                    <span class="side-menu__label" style="margin-top:7px;">
+                                                        Meetings</span>
+                                                </a>
+                                            </li>       
+                                        </ul>
+                                    </nav> <!-- End::nav -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-placeholder" style="width: auto; height: 1200px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar"
+                        style="width: 0px; display: none; transform: translate3d(0px, 0px, 0px);">
+                    </div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 142px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                </div>
+            </div> <!-- End::main-sidebar -->
+        </aside> <!-- End::app-sidebar --> <!-- Start::app-content -->
+<div class="main-content app-content">
+            <div class="container-fluid">
+
+                <!-- Page Header -->
+                <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
+                    <h1 class="page-title fw-semibold fs-18 mb-0">Recruiters</h1>
+                    <div class="ms-md-1 ms-0">
+                        <nav>
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboards</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Recruiters</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Page Header Close -->
+
+                <!-- Start::row-1 -->
+                <div class="row">
+                    <div class="col-xxl-7 col-xl-7 col-lg-12">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card custom-card">
+                                    <div class="card-header justify-content-between">
+                                        <div class="card-title">
+                                            Top Categories
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-light btn-wave btn-sm waves-effect waves-light">View All</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row gy-xxl-0 gy-3">
+                                            <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div>
+                                                    <a href="javascript:void(0);" class="category-link primary text-center">
+														<svg xmlns="http://www.w3.org/2000/svg" class="category-svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3"></path><path d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z"></path></svg>
+														<p class="fs-14 mb-1 text-default fw-semibold">Total JD Assigned</p>
+														<span class="fs-11 text-muted">100 JD</span>
+													</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div>
+                                                    <a href="javascript:void(0);" class="category-link secondary text-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="category-svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><g><rect fill="none" height="24" width="24"></rect></g><g><g opacity=".3"><path d="M6.71,18.71c-0.28,0.28-2.17,0.76-2.17,0.76s0.47-1.88,0.76-2.17C5.47,17.11,5.72,17,6,17c0.55,0,1,0.45,1,1 C7,18.28,6.89,18.53,6.71,18.71z M7.41,10.83L5.5,10.01l1.97-1.97l1.44,0.29C8.34,9.16,7.83,10.03,7.41,10.83z M13.99,18.5 l-0.82-1.91c0.8-0.42,1.67-0.93,2.49-1.5l0.29,1.44L13.99,18.5z M19.99,4.01c0,0-3.55-0.69-8.23,3.99 c-1.32,1.32-2.4,3.38-2.73,4.04l2.93,2.93c0.65-0.32,2.71-1.4,4.04-2.73C20.68,7.56,19.99,4.01,19.99,4.01z M15,11 c-1.1,0-2-0.9-2-2c0-1.1,0.9-2,2-2s2,0.9,2,2C17,10.1,16.1,11,15,11z"></path></g><g><path d="M6,15c-0.83,0-1.58,0.34-2.12,0.88C2.7,17.06,2,22,2,22s4.94-0.7,6.12-1.88C8.66,19.58,9,18.83,9,18C9,16.34,7.66,15,6,15 z M6.71,18.71c-0.28,0.28-2.17,0.76-2.17,0.76s0.47-1.88,0.76-2.17C5.47,17.11,5.72,17,6,17c0.55,0,1,0.45,1,1 C7,18.28,6.89,18.53,6.71,18.71z M17.42,13.65L17.42,13.65c6.36-6.36,4.24-11.31,4.24-11.31s-4.95-2.12-11.31,4.24l-2.49-0.5 C7.21,5.95,6.53,6.16,6.05,6.63L2,10.69l5,2.14L11.17,17l2.14,5l4.05-4.05c0.47-0.47,0.68-1.15,0.55-1.81L17.42,13.65z M7.41,10.83L5.5,10.01l1.97-1.97l1.44,0.29C8.34,9.16,7.83,10.03,7.41,10.83z M13.99,18.5l-0.82-1.91 c0.8-0.42,1.67-0.93,2.49-1.5l0.29,1.44L13.99,18.5z M16,12.24c-1.32,1.32-3.38,2.4-4.04,2.73l-2.93-2.93 c0.32-0.65,1.4-2.71,2.73-4.04c4.68-4.68,8.23-3.99,8.23-3.99S20.68,7.56,16,12.24z M15,11c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2 S13.9,11,15,11z"></path></g></g></svg>
+                                                        <p class="fs-14 mb-1 text-default fw-semibold">No of Closures</p>
+                                                        <span class="fs-11 text-muted">90 Closures</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div>
+                                                    <a href="javascript:void(0);" class="category-link warning text-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="category-svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" id="swatchbook"><path opacity="0.2" d="M9 22H5a3.003 3.003 0 0 1-3-3V5a3.003 3.003 0 0 1 3-3h4a3.003 3.003 0 0 1 3 3v14a3.003 3.003 0 0 1-3 3z"></path><path opacity="0.4" d="m20.293 6.535-2.828-2.828a3.004 3.004 0 0 0-4.243 0l-1.229 1.228c0 .022.007.043.007.065v14c0 .027-.007.052-.008.08l8.301-8.302a3.004 3.004 0 0 0 0-4.243z"></path><circle cx="7" cy="17" r="1" opacity="1"></circle><path opacity="1" d="m19.065 12.007-7.073 7.072c0-.027.008-.052.008-.079a3.003 3.003 0 0 1-3 3h10a3.003 3.003 0 0 0 3-3v-4a3 3 0 0 0-2.935-2.993z"></path></svg>
+                                                        <p class="fs-14 mb-1 text-default fw-semibold">Scheduled Meetings</p>
+                                                        <span class="fs-11 text-muted">30 Meetings</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            {% comment %} <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div>
+                                                    <a href="javascript:void(0);" class="category-link success">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="category-svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><rect fill="none" height="24" width="24"></rect><g opacity=".3"><path d="M10,5h4v14h-4V5z M4,11h4v8H4V11z M20,19h-4v-6h4V19z"></path></g><g><path d="M16,11V3H8v6H2v12h20V11H16z M10,5h4v14h-4V5z M4,11h4v8H4V11z M20,19h-4v-6h4V19z"></path></g></svg>
+                                                        <p class="fs-14 mb-1 text-default fw-semibold">Stocks &amp; Trading</p>
+                                                        <span class="fs-11 text-muted">100+ Courses</span>
+                                                    </a>
+                                                </div>
+                                            </div> {% endcomment %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="card custom-card">
+                                    <div class="card-header justify-content-between">
+                                        <div class="card-title">Report</div>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-primary btn-sm btn-wave waves-effect waves-light">1M</button>
+                                            <button type="button" class="btn btn-primary-light btn-sm btn-wave waves-effect waves-light">6M</button>
+                                            <button type="button" class="btn btn-primary-light btn-sm btn-wave waves-effect waves-light">1Y</button>
+                                            <button type="button" class="btn btn-primary-light btn-sm btn-wave waves-effect waves-light">All</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="courses-earnings" style="min-height: 355px;"><div id="apexchartsulfckl9oh" class="apexcharts-canvas apexchartsulfckl9oh apexcharts-theme-light" style="width: 683px; height: 340px;"><svg id="SvgjsSvg1470" width="683" height="340" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><foreignObject x="0" y="0" width="683" height="340"><div class="apexcharts-legend" xmlns="http://www.w3.org/1999/xhtml" style="max-height: 170px;"></div></foreignObject><g id="SvgjsG1604" class="apexcharts-yaxis" rel="0" transform="translate(13.51666259765625, 0)"><g id="SvgjsG1605" class="apexcharts-yaxis-texts-g"><text id="SvgjsText1607" font-family="Helvetica, Arial, sans-serif" x="20" y="31.4" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1608">80</tspan><title>80</title></text><text id="SvgjsText1610" font-family="Helvetica, Arial, sans-serif" x="20" y="99.64879984569549" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1611">60</tspan><title>60</title></text><text id="SvgjsText1613" font-family="Helvetica, Arial, sans-serif" x="20" y="167.89759969139098" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1614">40</tspan><title>40</title></text><text id="SvgjsText1616" font-family="Helvetica, Arial, sans-serif" x="20" y="236.14639953708647" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1617">20</tspan><title>20</title></text><text id="SvgjsText1619" font-family="Helvetica, Arial, sans-serif" x="20" y="304.3951993827819" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1620">0</tspan><title>0</title></text></g></g><g id="SvgjsG1472" class="apexcharts-inner apexcharts-graphical" transform="translate(43.51666259765625, 30)"><defs id="SvgjsDefs1471"><linearGradient id="SvgjsLinearGradient1475" x1="0" y1="0" x2="0" y2="1"><stop id="SvgjsStop1476" stop-opacity="0.4" stop-color="rgba(216,227,240,0.4)" offset="0"></stop><stop id="SvgjsStop1477" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop><stop id="SvgjsStop1478" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop></linearGradient><clipPath id="gridRectMaskulfckl9oh"><rect id="SvgjsRect1480" width="634.5833374023438" height="274.09519938278197" x="-2.55" y="-0.55" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskulfckl9oh"></clipPath><clipPath id="nonForecastMaskulfckl9oh"></clipPath><clipPath id="gridRectMarkerMaskulfckl9oh"><rect id="SvgjsRect1481" width="633.4833374023438" height="276.99519938278195" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><rect id="SvgjsRect1479" width="13.114236195882164" height="272.99519938278195" x="0" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke-dasharray="3" fill="url(#SvgjsLinearGradient1475)" class="apexcharts-xcrosshairs" y2="272.99519938278195" filter="none" fill-opacity="0.9"></rect><line id="SvgjsLine1543" x1="0" y1="273.99519938278195" x2="0" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1544" x1="52.45694478352865" y1="273.99519938278195" x2="52.45694478352865" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1545" x1="104.9138895670573" y1="273.99519938278195" x2="104.9138895670573" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1546" x1="157.37083435058594" y1="273.99519938278195" x2="157.37083435058594" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1547" x1="209.8277791341146" y1="273.99519938278195" x2="209.8277791341146" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1548" x1="262.28472391764325" y1="273.99519938278195" x2="262.28472391764325" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1549" x1="314.7416687011719" y1="273.99519938278195" x2="314.7416687011719" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1550" x1="367.1986134847005" y1="273.99519938278195" x2="367.1986134847005" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1551" x1="419.65555826822913" y1="273.99519938278195" x2="419.65555826822913" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1552" x1="472.11250305175776" y1="273.99519938278195" x2="472.11250305175776" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1553" x1="524.5694478352864" y1="273.99519938278195" x2="524.5694478352864" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1554" x1="577.0263926188151" y1="273.99519938278195" x2="577.0263926188151" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1555" x1="629.4833374023438" y1="273.99519938278195" x2="629.4833374023438" y2="279.99519938278195" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><g id="SvgjsG1539" class="apexcharts-grid"><g id="SvgjsG1540" class="apexcharts-gridlines-horizontal"><line id="SvgjsLine1557" x1="0" y1="68.24879984569549" x2="629.4833374023438" y2="68.24879984569549" stroke="#f3f3f3" stroke-dasharray="3" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1558" x1="0" y1="136.49759969139097" x2="629.4833374023438" y2="136.49759969139097" stroke="#f3f3f3" stroke-dasharray="3" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1559" x1="0" y1="204.74639953708646" x2="629.4833374023438" y2="204.74639953708646" stroke="#f3f3f3" stroke-dasharray="3" stroke-linecap="butt" class="apexcharts-gridline"></line></g><g id="SvgjsG1541" class="apexcharts-gridlines-vertical"></g><line id="SvgjsLine1562" x1="0" y1="272.99519938278195" x2="629.4833374023438" y2="272.99519938278195" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line><line id="SvgjsLine1561" x1="0" y1="1" x2="0" y2="272.99519938278195" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line></g><g id="SvgjsG1542" class="apexcharts-grid-borders"><line id="SvgjsLine1556" x1="0" y1="0" x2="629.4833374023438" y2="0" stroke="#f3f3f3" stroke-dasharray="3" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1560" x1="0" y1="272.99519938278195" x2="629.4833374023438" y2="272.99519938278195" stroke="#f3f3f3" stroke-dasharray="3" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1603" x1="0" y1="273.99519938278195" x2="629.4833374023438" y2="273.99519938278195" stroke="rgba(119, 119, 142, 0.05)" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt"></line></g><g id="SvgjsG1482" class="apexcharts-bar-series apexcharts-plot-series"><g id="SvgjsG1483" class="apexcharts-series" rel="1" seriesName="Earnings" data:realIndex="0"><path id="SvgjsPath1488" d="M 13.11423619588216 270.9961993827819 L 13.11423619588216 172.62299961423875 C 13.11423619588216 171.62299961423875 14.11423619588216 170.62299961423875 15.11423619588216 170.62299961423875 L 23.128472391764323 170.62299961423875 C 24.128472391764323 170.62299961423875 25.128472391764323 171.62299961423875 25.128472391764323 172.62299961423875 L 25.128472391764323 270.9961993827819 C 25.128472391764323 271.9961993827819 24.128472391764323 272.9961993827819 23.128472391764323 272.9961993827819 L 15.11423619588216 272.9961993827819 C 14.11423619588216 272.9961993827819 13.11423619588216 271.9961993827819 13.11423619588216 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 13.11423619588216 270.9961993827819 L 13.11423619588216 172.62299961423875 C 13.11423619588216 171.62299961423875 14.11423619588216 170.62299961423875 15.11423619588216 170.62299961423875 L 23.128472391764323 170.62299961423875 C 24.128472391764323 170.62299961423875 25.128472391764323 171.62299961423875 25.128472391764323 172.62299961423875 L 25.128472391764323 270.9961993827819 C 25.128472391764323 271.9961993827819 24.128472391764323 272.9961993827819 23.128472391764323 272.9961993827819 L 15.11423619588216 272.9961993827819 C 14.11423619588216 272.9961993827819 13.11423619588216 271.9961993827819 13.11423619588216 270.9961993827819 Z " pathFrom="M 13.11423619588216 270.9961993827819 L 13.11423619588216 172.62299961423875 C 13.11423619588216 171.62299961423875 14.11423619588216 170.62299961423875 15.11423619588216 170.62299961423875 L 23.128472391764323 170.62299961423875 C 24.128472391764323 170.62299961423875 25.128472391764323 171.62299961423875 25.128472391764323 172.62299961423875 L 25.128472391764323 270.9961993827819 C 25.128472391764323 271.9961993827819 24.128472391764323 272.9961993827819 23.128472391764323 272.9961993827819 L 15.11423619588216 272.9961993827819 C 14.11423619588216 272.9961993827819 13.11423619588216 271.9961993827819 13.11423619588216 270.9961993827819 Z  L 13.11423619588216 272.9961993827819 L 25.128472391764323 272.9961993827819 L 25.128472391764323 272.9961993827819 L 25.128472391764323 272.9961993827819 L 25.128472391764323 272.9961993827819 L 25.128472391764323 272.9961993827819 L 13.11423619588216 272.9961993827819 Z" cy="170.62199961423875" cx="65.02118097941081" j="0" val="30" barHeight="102.37319976854322" barWidth="13.114236195882164"></path><path id="SvgjsPath1490" d="M 65.57118097941081 270.9961993827819 L 65.57118097941081 189.6851995756626 C 65.57118097941081 188.6851995756626 66.57118097941081 187.6851995756626 67.57118097941081 187.6851995756626 L 75.58541717529297 187.6851995756626 C 76.58541717529297 187.6851995756626 77.58541717529297 188.6851995756626 77.58541717529297 189.6851995756626 L 77.58541717529297 270.9961993827819 C 77.58541717529297 271.9961993827819 76.58541717529297 272.9961993827819 75.58541717529297 272.9961993827819 L 67.57118097941081 272.9961993827819 C 66.57118097941081 272.9961993827819 65.57118097941081 271.9961993827819 65.57118097941081 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 65.57118097941081 270.9961993827819 L 65.57118097941081 189.6851995756626 C 65.57118097941081 188.6851995756626 66.57118097941081 187.6851995756626 67.57118097941081 187.6851995756626 L 75.58541717529297 187.6851995756626 C 76.58541717529297 187.6851995756626 77.58541717529297 188.6851995756626 77.58541717529297 189.6851995756626 L 77.58541717529297 270.9961993827819 C 77.58541717529297 271.9961993827819 76.58541717529297 272.9961993827819 75.58541717529297 272.9961993827819 L 67.57118097941081 272.9961993827819 C 66.57118097941081 272.9961993827819 65.57118097941081 271.9961993827819 65.57118097941081 270.9961993827819 Z " pathFrom="M 65.57118097941081 270.9961993827819 L 65.57118097941081 189.6851995756626 C 65.57118097941081 188.6851995756626 66.57118097941081 187.6851995756626 67.57118097941081 187.6851995756626 L 75.58541717529297 187.6851995756626 C 76.58541717529297 187.6851995756626 77.58541717529297 188.6851995756626 77.58541717529297 189.6851995756626 L 77.58541717529297 270.9961993827819 C 77.58541717529297 271.9961993827819 76.58541717529297 272.9961993827819 75.58541717529297 272.9961993827819 L 67.57118097941081 272.9961993827819 C 66.57118097941081 272.9961993827819 65.57118097941081 271.9961993827819 65.57118097941081 270.9961993827819 Z  L 65.57118097941081 272.9961993827819 L 77.58541717529297 272.9961993827819 L 77.58541717529297 272.9961993827819 L 77.58541717529297 272.9961993827819 L 77.58541717529297 272.9961993827819 L 77.58541717529297 272.9961993827819 L 65.57118097941081 272.9961993827819 Z" cy="187.6841995756626" cx="117.47812576293946" j="1" val="25" barHeight="85.31099980711934" barWidth="13.114236195882164"></path><path id="SvgjsPath1492" d="M 118.02812576293945 270.9961993827819 L 118.02812576293945 152.14835966053008 C 118.02812576293945 151.14835966053008 119.02812576293945 150.14835966053008 120.02812576293945 150.14835966053008 L 128.04236195882163 150.14835966053008 C 129.04236195882163 150.14835966053008 130.04236195882163 151.14835966053008 130.04236195882163 152.14835966053008 L 130.04236195882163 270.9961993827819 C 130.04236195882163 271.9961993827819 129.04236195882163 272.9961993827819 128.04236195882163 272.9961993827819 L 120.02812576293945 272.9961993827819 C 119.02812576293945 272.9961993827819 118.02812576293945 271.9961993827819 118.02812576293945 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 118.02812576293945 270.9961993827819 L 118.02812576293945 152.14835966053008 C 118.02812576293945 151.14835966053008 119.02812576293945 150.14835966053008 120.02812576293945 150.14835966053008 L 128.04236195882163 150.14835966053008 C 129.04236195882163 150.14835966053008 130.04236195882163 151.14835966053008 130.04236195882163 152.14835966053008 L 130.04236195882163 270.9961993827819 C 130.04236195882163 271.9961993827819 129.04236195882163 272.9961993827819 128.04236195882163 272.9961993827819 L 120.02812576293945 272.9961993827819 C 119.02812576293945 272.9961993827819 118.02812576293945 271.9961993827819 118.02812576293945 270.9961993827819 Z " pathFrom="M 118.02812576293945 270.9961993827819 L 118.02812576293945 152.14835966053008 C 118.02812576293945 151.14835966053008 119.02812576293945 150.14835966053008 120.02812576293945 150.14835966053008 L 128.04236195882163 150.14835966053008 C 129.04236195882163 150.14835966053008 130.04236195882163 151.14835966053008 130.04236195882163 152.14835966053008 L 130.04236195882163 270.9961993827819 C 130.04236195882163 271.9961993827819 129.04236195882163 272.9961993827819 128.04236195882163 272.9961993827819 L 120.02812576293945 272.9961993827819 C 119.02812576293945 272.9961993827819 118.02812576293945 271.9961993827819 118.02812576293945 270.9961993827819 Z  L 118.02812576293945 272.9961993827819 L 130.04236195882163 272.9961993827819 L 130.04236195882163 272.9961993827819 L 130.04236195882163 272.9961993827819 L 130.04236195882163 272.9961993827819 L 130.04236195882163 272.9961993827819 L 118.02812576293945 272.9961993827819 Z" cy="150.14735966053007" cx="169.9350705464681" j="2" val="36" barHeight="122.84783972225186" barWidth="13.114236195882164"></path><path id="SvgjsPath1494" d="M 170.4850705464681 270.9961993827819 L 170.4850705464681 172.62299961423875 C 170.4850705464681 171.62299961423875 171.4850705464681 170.62299961423875 172.4850705464681 170.62299961423875 L 180.49930674235029 170.62299961423875 C 181.49930674235029 170.62299961423875 182.49930674235029 171.62299961423875 182.49930674235029 172.62299961423875 L 182.49930674235029 270.9961993827819 C 182.49930674235029 271.9961993827819 181.49930674235029 272.9961993827819 180.49930674235029 272.9961993827819 L 172.4850705464681 272.9961993827819 C 171.4850705464681 272.9961993827819 170.4850705464681 271.9961993827819 170.4850705464681 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 170.4850705464681 270.9961993827819 L 170.4850705464681 172.62299961423875 C 170.4850705464681 171.62299961423875 171.4850705464681 170.62299961423875 172.4850705464681 170.62299961423875 L 180.49930674235029 170.62299961423875 C 181.49930674235029 170.62299961423875 182.49930674235029 171.62299961423875 182.49930674235029 172.62299961423875 L 182.49930674235029 270.9961993827819 C 182.49930674235029 271.9961993827819 181.49930674235029 272.9961993827819 180.49930674235029 272.9961993827819 L 172.4850705464681 272.9961993827819 C 171.4850705464681 272.9961993827819 170.4850705464681 271.9961993827819 170.4850705464681 270.9961993827819 Z " pathFrom="M 170.4850705464681 270.9961993827819 L 170.4850705464681 172.62299961423875 C 170.4850705464681 171.62299961423875 171.4850705464681 170.62299961423875 172.4850705464681 170.62299961423875 L 180.49930674235029 170.62299961423875 C 181.49930674235029 170.62299961423875 182.49930674235029 171.62299961423875 182.49930674235029 172.62299961423875 L 182.49930674235029 270.9961993827819 C 182.49930674235029 271.9961993827819 181.49930674235029 272.9961993827819 180.49930674235029 272.9961993827819 L 172.4850705464681 272.9961993827819 C 171.4850705464681 272.9961993827819 170.4850705464681 271.9961993827819 170.4850705464681 270.9961993827819 Z  L 170.4850705464681 272.9961993827819 L 182.49930674235029 272.9961993827819 L 182.49930674235029 272.9961993827819 L 182.49930674235029 272.9961993827819 L 182.49930674235029 272.9961993827819 L 182.49930674235029 272.9961993827819 L 170.4850705464681 272.9961993827819 Z" cy="170.62199961423875" cx="222.39201532999675" j="3" val="30" barHeight="102.37319976854322" barWidth="13.114236195882164"></path><path id="SvgjsPath1496" d="M 222.94201532999676 270.9961993827819 L 222.94201532999676 121.43639972996712 C 222.94201532999676 120.43639972996712 223.94201532999676 119.43639972996712 224.94201532999676 119.43639972996712 L 232.95625152587894 119.43639972996712 C 233.95625152587894 119.43639972996712 234.95625152587894 120.43639972996712 234.95625152587894 121.43639972996712 L 234.95625152587894 270.9961993827819 C 234.95625152587894 271.9961993827819 233.95625152587894 272.9961993827819 232.95625152587894 272.9961993827819 L 224.94201532999676 272.9961993827819 C 223.94201532999676 272.9961993827819 222.94201532999676 271.9961993827819 222.94201532999676 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 222.94201532999676 270.9961993827819 L 222.94201532999676 121.43639972996712 C 222.94201532999676 120.43639972996712 223.94201532999676 119.43639972996712 224.94201532999676 119.43639972996712 L 232.95625152587894 119.43639972996712 C 233.95625152587894 119.43639972996712 234.95625152587894 120.43639972996712 234.95625152587894 121.43639972996712 L 234.95625152587894 270.9961993827819 C 234.95625152587894 271.9961993827819 233.95625152587894 272.9961993827819 232.95625152587894 272.9961993827819 L 224.94201532999676 272.9961993827819 C 223.94201532999676 272.9961993827819 222.94201532999676 271.9961993827819 222.94201532999676 270.9961993827819 Z " pathFrom="M 222.94201532999676 270.9961993827819 L 222.94201532999676 121.43639972996712 C 222.94201532999676 120.43639972996712 223.94201532999676 119.43639972996712 224.94201532999676 119.43639972996712 L 232.95625152587894 119.43639972996712 C 233.95625152587894 119.43639972996712 234.95625152587894 120.43639972996712 234.95625152587894 121.43639972996712 L 234.95625152587894 270.9961993827819 C 234.95625152587894 271.9961993827819 233.95625152587894 272.9961993827819 232.95625152587894 272.9961993827819 L 224.94201532999676 272.9961993827819 C 223.94201532999676 272.9961993827819 222.94201532999676 271.9961993827819 222.94201532999676 270.9961993827819 Z  L 222.94201532999676 272.9961993827819 L 234.95625152587894 272.9961993827819 L 234.95625152587894 272.9961993827819 L 234.95625152587894 272.9961993827819 L 234.95625152587894 272.9961993827819 L 234.95625152587894 272.9961993827819 L 222.94201532999676 272.9961993827819 Z" cy="119.43539972996712" cx="274.8489601135254" j="4" val="45" barHeight="153.55979965281483" barWidth="13.114236195882164"></path><path id="SvgjsPath1498" d="M 275.3989601135254 270.9961993827819 L 275.3989601135254 155.56079965281486 C 275.3989601135254 154.56079965281486 276.3989601135254 153.56079965281486 277.3989601135254 153.56079965281486 L 285.4131963094075 153.56079965281486 C 286.4131963094075 153.56079965281486 287.4131963094075 154.56079965281486 287.4131963094075 155.56079965281486 L 287.4131963094075 270.9961993827819 C 287.4131963094075 271.9961993827819 286.4131963094075 272.9961993827819 285.4131963094075 272.9961993827819 L 277.3989601135254 272.9961993827819 C 276.3989601135254 272.9961993827819 275.3989601135254 271.9961993827819 275.3989601135254 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 275.3989601135254 270.9961993827819 L 275.3989601135254 155.56079965281486 C 275.3989601135254 154.56079965281486 276.3989601135254 153.56079965281486 277.3989601135254 153.56079965281486 L 285.4131963094075 153.56079965281486 C 286.4131963094075 153.56079965281486 287.4131963094075 154.56079965281486 287.4131963094075 155.56079965281486 L 287.4131963094075 270.9961993827819 C 287.4131963094075 271.9961993827819 286.4131963094075 272.9961993827819 285.4131963094075 272.9961993827819 L 277.3989601135254 272.9961993827819 C 276.3989601135254 272.9961993827819 275.3989601135254 271.9961993827819 275.3989601135254 270.9961993827819 Z " pathFrom="M 275.3989601135254 270.9961993827819 L 275.3989601135254 155.56079965281486 C 275.3989601135254 154.56079965281486 276.3989601135254 153.56079965281486 277.3989601135254 153.56079965281486 L 285.4131963094075 153.56079965281486 C 286.4131963094075 153.56079965281486 287.4131963094075 154.56079965281486 287.4131963094075 155.56079965281486 L 287.4131963094075 270.9961993827819 C 287.4131963094075 271.9961993827819 286.4131963094075 272.9961993827819 285.4131963094075 272.9961993827819 L 277.3989601135254 272.9961993827819 C 276.3989601135254 272.9961993827819 275.3989601135254 271.9961993827819 275.3989601135254 270.9961993827819 Z  L 275.3989601135254 272.9961993827819 L 287.4131963094075 272.9961993827819 L 287.4131963094075 272.9961993827819 L 287.4131963094075 272.9961993827819 L 287.4131963094075 272.9961993827819 L 287.4131963094075 272.9961993827819 L 275.3989601135254 272.9961993827819 Z" cy="153.55979965281486" cx="327.305904897054" j="5" val="35" barHeight="119.43539972996709" barWidth="13.114236195882164"></path><path id="SvgjsPath1500" d="M 327.855904897054 270.9961993827819 L 327.855904897054 56.600039876556416 C 327.855904897054 55.600039876556416 328.855904897054 54.600039876556416 329.855904897054 54.600039876556416 L 337.87014109293614 54.600039876556416 C 338.87014109293614 54.600039876556416 339.87014109293614 55.600039876556416 339.87014109293614 56.600039876556416 L 339.87014109293614 270.9961993827819 C 339.87014109293614 271.9961993827819 338.87014109293614 272.9961993827819 337.87014109293614 272.9961993827819 L 329.855904897054 272.9961993827819 C 328.855904897054 272.9961993827819 327.855904897054 271.9961993827819 327.855904897054 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 327.855904897054 270.9961993827819 L 327.855904897054 56.600039876556416 C 327.855904897054 55.600039876556416 328.855904897054 54.600039876556416 329.855904897054 54.600039876556416 L 337.87014109293614 54.600039876556416 C 338.87014109293614 54.600039876556416 339.87014109293614 55.600039876556416 339.87014109293614 56.600039876556416 L 339.87014109293614 270.9961993827819 C 339.87014109293614 271.9961993827819 338.87014109293614 272.9961993827819 337.87014109293614 272.9961993827819 L 329.855904897054 272.9961993827819 C 328.855904897054 272.9961993827819 327.855904897054 271.9961993827819 327.855904897054 270.9961993827819 Z " pathFrom="M 327.855904897054 270.9961993827819 L 327.855904897054 56.600039876556416 C 327.855904897054 55.600039876556416 328.855904897054 54.600039876556416 329.855904897054 54.600039876556416 L 337.87014109293614 54.600039876556416 C 338.87014109293614 54.600039876556416 339.87014109293614 55.600039876556416 339.87014109293614 56.600039876556416 L 339.87014109293614 270.9961993827819 C 339.87014109293614 271.9961993827819 338.87014109293614 272.9961993827819 337.87014109293614 272.9961993827819 L 329.855904897054 272.9961993827819 C 328.855904897054 272.9961993827819 327.855904897054 271.9961993827819 327.855904897054 270.9961993827819 Z  L 327.855904897054 272.9961993827819 L 339.87014109293614 272.9961993827819 L 339.87014109293614 272.9961993827819 L 339.87014109293614 272.9961993827819 L 339.87014109293614 272.9961993827819 L 339.87014109293614 272.9961993827819 L 327.855904897054 272.9961993827819 Z" cy="54.59903987655642" cx="379.76284968058263" j="6" val="64" barHeight="218.39615950622553" barWidth="13.114236195882164"></path><path id="SvgjsPath1502" d="M 380.31284968058264 270.9961993827819 L 380.31284968058264 100.96175977625848 C 380.31284968058264 99.96175977625848 381.31284968058264 98.96175977625848 382.31284968058264 98.96175977625848 L 390.32708587646476 98.96175977625848 C 391.32708587646476 98.96175977625848 392.32708587646476 99.96175977625848 392.32708587646476 100.96175977625848 L 392.32708587646476 270.9961993827819 C 392.32708587646476 271.9961993827819 391.32708587646476 272.9961993827819 390.32708587646476 272.9961993827819 L 382.31284968058264 272.9961993827819 C 381.31284968058264 272.9961993827819 380.31284968058264 271.9961993827819 380.31284968058264 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 380.31284968058264 270.9961993827819 L 380.31284968058264 100.96175977625848 C 380.31284968058264 99.96175977625848 381.31284968058264 98.96175977625848 382.31284968058264 98.96175977625848 L 390.32708587646476 98.96175977625848 C 391.32708587646476 98.96175977625848 392.32708587646476 99.96175977625848 392.32708587646476 100.96175977625848 L 392.32708587646476 270.9961993827819 C 392.32708587646476 271.9961993827819 391.32708587646476 272.9961993827819 390.32708587646476 272.9961993827819 L 382.31284968058264 272.9961993827819 C 381.31284968058264 272.9961993827819 380.31284968058264 271.9961993827819 380.31284968058264 270.9961993827819 Z " pathFrom="M 380.31284968058264 270.9961993827819 L 380.31284968058264 100.96175977625848 C 380.31284968058264 99.96175977625848 381.31284968058264 98.96175977625848 382.31284968058264 98.96175977625848 L 390.32708587646476 98.96175977625848 C 391.32708587646476 98.96175977625848 392.32708587646476 99.96175977625848 392.32708587646476 100.96175977625848 L 392.32708587646476 270.9961993827819 C 392.32708587646476 271.9961993827819 391.32708587646476 272.9961993827819 390.32708587646476 272.9961993827819 L 382.31284968058264 272.9961993827819 C 381.31284968058264 272.9961993827819 380.31284968058264 271.9961993827819 380.31284968058264 270.9961993827819 Z  L 380.31284968058264 272.9961993827819 L 392.32708587646476 272.9961993827819 L 392.32708587646476 272.9961993827819 L 392.32708587646476 272.9961993827819 L 392.32708587646476 272.9961993827819 L 392.32708587646476 272.9961993827819 L 380.31284968058264 272.9961993827819 Z" cy="98.96075977625847" cx="432.21979446411126" j="7" val="51" barHeight="174.03443960652348" barWidth="13.114236195882164"></path><path id="SvgjsPath1504" d="M 432.76979446411127 270.9961993827819 L 432.76979446411127 73.66223983798028 C 432.76979446411127 72.66223983798028 433.76979446411127 71.66223983798028 434.76979446411127 71.66223983798028 L 442.7840306599934 71.66223983798028 C 443.7840306599934 71.66223983798028 444.7840306599934 72.66223983798028 444.7840306599934 73.66223983798028 L 444.7840306599934 270.9961993827819 C 444.7840306599934 271.9961993827819 443.7840306599934 272.9961993827819 442.7840306599934 272.9961993827819 L 434.76979446411127 272.9961993827819 C 433.76979446411127 272.9961993827819 432.76979446411127 271.9961993827819 432.76979446411127 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 432.76979446411127 270.9961993827819 L 432.76979446411127 73.66223983798028 C 432.76979446411127 72.66223983798028 433.76979446411127 71.66223983798028 434.76979446411127 71.66223983798028 L 442.7840306599934 71.66223983798028 C 443.7840306599934 71.66223983798028 444.7840306599934 72.66223983798028 444.7840306599934 73.66223983798028 L 444.7840306599934 270.9961993827819 C 444.7840306599934 271.9961993827819 443.7840306599934 272.9961993827819 442.7840306599934 272.9961993827819 L 434.76979446411127 272.9961993827819 C 433.76979446411127 272.9961993827819 432.76979446411127 271.9961993827819 432.76979446411127 270.9961993827819 Z " pathFrom="M 432.76979446411127 270.9961993827819 L 432.76979446411127 73.66223983798028 C 432.76979446411127 72.66223983798028 433.76979446411127 71.66223983798028 434.76979446411127 71.66223983798028 L 442.7840306599934 71.66223983798028 C 443.7840306599934 71.66223983798028 444.7840306599934 72.66223983798028 444.7840306599934 73.66223983798028 L 444.7840306599934 270.9961993827819 C 444.7840306599934 271.9961993827819 443.7840306599934 272.9961993827819 442.7840306599934 272.9961993827819 L 434.76979446411127 272.9961993827819 C 433.76979446411127 272.9961993827819 432.76979446411127 271.9961993827819 432.76979446411127 270.9961993827819 Z  L 432.76979446411127 272.9961993827819 L 444.7840306599934 272.9961993827819 L 444.7840306599934 272.9961993827819 L 444.7840306599934 272.9961993827819 L 444.7840306599934 272.9961993827819 L 444.7840306599934 272.9961993827819 L 432.76979446411127 272.9961993827819 Z" cy="71.66123983798028" cx="484.6767392476399" j="8" val="59" barHeight="201.33395954480167" barWidth="13.114236195882164"></path><path id="SvgjsPath1506" d="M 485.2267392476399 270.9961993827819 L 485.2267392476399 152.14835966053008 C 485.2267392476399 151.14835966053008 486.2267392476399 150.14835966053008 487.2267392476399 150.14835966053008 L 495.240975443522 150.14835966053008 C 496.240975443522 150.14835966053008 497.240975443522 151.14835966053008 497.240975443522 152.14835966053008 L 497.240975443522 270.9961993827819 C 497.240975443522 271.9961993827819 496.240975443522 272.9961993827819 495.240975443522 272.9961993827819 L 487.2267392476399 272.9961993827819 C 486.2267392476399 272.9961993827819 485.2267392476399 271.9961993827819 485.2267392476399 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 485.2267392476399 270.9961993827819 L 485.2267392476399 152.14835966053008 C 485.2267392476399 151.14835966053008 486.2267392476399 150.14835966053008 487.2267392476399 150.14835966053008 L 495.240975443522 150.14835966053008 C 496.240975443522 150.14835966053008 497.240975443522 151.14835966053008 497.240975443522 152.14835966053008 L 497.240975443522 270.9961993827819 C 497.240975443522 271.9961993827819 496.240975443522 272.9961993827819 495.240975443522 272.9961993827819 L 487.2267392476399 272.9961993827819 C 486.2267392476399 272.9961993827819 485.2267392476399 271.9961993827819 485.2267392476399 270.9961993827819 Z " pathFrom="M 485.2267392476399 270.9961993827819 L 485.2267392476399 152.14835966053008 C 485.2267392476399 151.14835966053008 486.2267392476399 150.14835966053008 487.2267392476399 150.14835966053008 L 495.240975443522 150.14835966053008 C 496.240975443522 150.14835966053008 497.240975443522 151.14835966053008 497.240975443522 152.14835966053008 L 497.240975443522 270.9961993827819 C 497.240975443522 271.9961993827819 496.240975443522 272.9961993827819 495.240975443522 272.9961993827819 L 487.2267392476399 272.9961993827819 C 486.2267392476399 272.9961993827819 485.2267392476399 271.9961993827819 485.2267392476399 270.9961993827819 Z  L 485.2267392476399 272.9961993827819 L 497.240975443522 272.9961993827819 L 497.240975443522 272.9961993827819 L 497.240975443522 272.9961993827819 L 497.240975443522 272.9961993827819 L 497.240975443522 272.9961993827819 L 485.2267392476399 272.9961993827819 Z" cy="150.14735966053007" cx="537.1336840311686" j="9" val="36" barHeight="122.84783972225186" barWidth="13.114236195882164"></path><path id="SvgjsPath1508" d="M 537.6836840311686 270.9961993827819 L 537.6836840311686 141.91103968367577 C 537.6836840311686 140.91103968367577 538.6836840311686 139.91103968367577 539.6836840311686 139.91103968367577 L 547.6979202270508 139.91103968367577 C 548.6979202270508 139.91103968367577 549.6979202270508 140.91103968367577 549.6979202270508 141.91103968367577 L 549.6979202270508 270.9961993827819 C 549.6979202270508 271.9961993827819 548.6979202270508 272.9961993827819 547.6979202270508 272.9961993827819 L 539.6836840311686 272.9961993827819 C 538.6836840311686 272.9961993827819 537.6836840311686 271.9961993827819 537.6836840311686 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 537.6836840311686 270.9961993827819 L 537.6836840311686 141.91103968367577 C 537.6836840311686 140.91103968367577 538.6836840311686 139.91103968367577 539.6836840311686 139.91103968367577 L 547.6979202270508 139.91103968367577 C 548.6979202270508 139.91103968367577 549.6979202270508 140.91103968367577 549.6979202270508 141.91103968367577 L 549.6979202270508 270.9961993827819 C 549.6979202270508 271.9961993827819 548.6979202270508 272.9961993827819 547.6979202270508 272.9961993827819 L 539.6836840311686 272.9961993827819 C 538.6836840311686 272.9961993827819 537.6836840311686 271.9961993827819 537.6836840311686 270.9961993827819 Z " pathFrom="M 537.6836840311686 270.9961993827819 L 537.6836840311686 141.91103968367577 C 537.6836840311686 140.91103968367577 538.6836840311686 139.91103968367577 539.6836840311686 139.91103968367577 L 547.6979202270508 139.91103968367577 C 548.6979202270508 139.91103968367577 549.6979202270508 140.91103968367577 549.6979202270508 141.91103968367577 L 549.6979202270508 270.9961993827819 C 549.6979202270508 271.9961993827819 548.6979202270508 272.9961993827819 547.6979202270508 272.9961993827819 L 539.6836840311686 272.9961993827819 C 538.6836840311686 272.9961993827819 537.6836840311686 271.9961993827819 537.6836840311686 270.9961993827819 Z  L 537.6836840311686 272.9961993827819 L 549.6979202270508 272.9961993827819 L 549.6979202270508 272.9961993827819 L 549.6979202270508 272.9961993827819 L 549.6979202270508 272.9961993827819 L 549.6979202270508 272.9961993827819 L 537.6836840311686 272.9961993827819 Z" cy="139.91003968367576" cx="589.5906288146973" j="10" val="39" barHeight="133.08515969910619" barWidth="13.114236195882164"></path><path id="SvgjsPath1510" d="M 590.1406288146973 270.9961993827819 L 590.1406288146973 100.96175977625848 C 590.1406288146973 99.96175977625848 591.1406288146973 98.96175977625848 592.1406288146973 98.96175977625848 L 600.1548650105794 98.96175977625848 C 601.1548650105794 98.96175977625848 602.1548650105794 99.96175977625848 602.1548650105794 100.96175977625848 L 602.1548650105794 270.9961993827819 C 602.1548650105794 271.9961993827819 601.1548650105794 272.9961993827819 600.1548650105794 272.9961993827819 L 592.1406288146973 272.9961993827819 C 591.1406288146973 272.9961993827819 590.1406288146973 271.9961993827819 590.1406288146973 270.9961993827819 Z " fill="#845adf" fill-opacity="1" stroke="#845adf" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 590.1406288146973 270.9961993827819 L 590.1406288146973 100.96175977625848 C 590.1406288146973 99.96175977625848 591.1406288146973 98.96175977625848 592.1406288146973 98.96175977625848 L 600.1548650105794 98.96175977625848 C 601.1548650105794 98.96175977625848 602.1548650105794 99.96175977625848 602.1548650105794 100.96175977625848 L 602.1548650105794 270.9961993827819 C 602.1548650105794 271.9961993827819 601.1548650105794 272.9961993827819 600.1548650105794 272.9961993827819 L 592.1406288146973 272.9961993827819 C 591.1406288146973 272.9961993827819 590.1406288146973 271.9961993827819 590.1406288146973 270.9961993827819 Z " pathFrom="M 590.1406288146973 270.9961993827819 L 590.1406288146973 100.96175977625848 C 590.1406288146973 99.96175977625848 591.1406288146973 98.96175977625848 592.1406288146973 98.96175977625848 L 600.1548650105794 98.96175977625848 C 601.1548650105794 98.96175977625848 602.1548650105794 99.96175977625848 602.1548650105794 100.96175977625848 L 602.1548650105794 270.9961993827819 C 602.1548650105794 271.9961993827819 601.1548650105794 272.9961993827819 600.1548650105794 272.9961993827819 L 592.1406288146973 272.9961993827819 C 591.1406288146973 272.9961993827819 590.1406288146973 271.9961993827819 590.1406288146973 270.9961993827819 Z  L 590.1406288146973 272.9961993827819 L 602.1548650105794 272.9961993827819 L 602.1548650105794 272.9961993827819 L 602.1548650105794 272.9961993827819 L 602.1548650105794 272.9961993827819 L 602.1548650105794 272.9961993827819 L 590.1406288146973 272.9961993827819 Z" cy="98.96075977625847" cx="642.047573598226" j="11" val="51" barHeight="174.03443960652348" barWidth="13.114236195882164"></path><g id="SvgjsG1485" class="apexcharts-bar-goals-markers"><g id="SvgjsG1487" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1489" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1491" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1493" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1495" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1497" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1499" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1501" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1503" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1505" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1507" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1509" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g></g><g id="SvgjsG1486" class="apexcharts-bar-shadows apexcharts-hidden-element-shown"></g></g><g id="SvgjsG1511" class="apexcharts-series" rel="2" seriesName="Students" data:realIndex="1"><path id="SvgjsPath1516" d="M 26.228472391764324 270.9961993827819 L 26.228472391764324 162.3856796373844 C 26.228472391764324 161.3856796373844 27.228472391764324 160.3856796373844 28.228472391764324 160.3856796373844 L 36.24270858764648 160.3856796373844 C 37.24270858764648 160.3856796373844 38.24270858764648 161.3856796373844 38.24270858764648 162.3856796373844 L 38.24270858764648 270.9961993827819 C 38.24270858764648 271.9961993827819 37.24270858764648 272.9961993827819 36.24270858764648 272.9961993827819 L 28.228472391764324 272.9961993827819 C 27.228472391764324 272.9961993827819 26.228472391764324 271.9961993827819 26.228472391764324 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 26.228472391764324 270.9961993827819 L 26.228472391764324 162.3856796373844 C 26.228472391764324 161.3856796373844 27.228472391764324 160.3856796373844 28.228472391764324 160.3856796373844 L 36.24270858764648 160.3856796373844 C 37.24270858764648 160.3856796373844 38.24270858764648 161.3856796373844 38.24270858764648 162.3856796373844 L 38.24270858764648 270.9961993827819 C 38.24270858764648 271.9961993827819 37.24270858764648 272.9961993827819 36.24270858764648 272.9961993827819 L 28.228472391764324 272.9961993827819 C 27.228472391764324 272.9961993827819 26.228472391764324 271.9961993827819 26.228472391764324 270.9961993827819 Z " pathFrom="M 26.228472391764324 270.9961993827819 L 26.228472391764324 162.3856796373844 C 26.228472391764324 161.3856796373844 27.228472391764324 160.3856796373844 28.228472391764324 160.3856796373844 L 36.24270858764648 160.3856796373844 C 37.24270858764648 160.3856796373844 38.24270858764648 161.3856796373844 38.24270858764648 162.3856796373844 L 38.24270858764648 270.9961993827819 C 38.24270858764648 271.9961993827819 37.24270858764648 272.9961993827819 36.24270858764648 272.9961993827819 L 28.228472391764324 272.9961993827819 C 27.228472391764324 272.9961993827819 26.228472391764324 271.9961993827819 26.228472391764324 270.9961993827819 Z  L 26.228472391764324 272.9961993827819 L 38.24270858764648 272.9961993827819 L 38.24270858764648 272.9961993827819 L 38.24270858764648 272.9961993827819 L 38.24270858764648 272.9961993827819 L 38.24270858764648 272.9961993827819 L 26.228472391764324 272.9961993827819 Z" cy="160.3846796373844" cx="78.13541717529297" j="0" val="33" barHeight="112.61051974539754" barWidth="13.114236195882164"></path><path id="SvgjsPath1518" d="M 78.68541717529297 270.9961993827819 L 78.68541717529297 203.3349595448017 C 78.68541717529297 202.3349595448017 79.68541717529297 201.3349595448017 80.68541717529297 201.3349595448017 L 88.69965337117515 201.3349595448017 C 89.69965337117515 201.3349595448017 90.69965337117515 202.3349595448017 90.69965337117515 203.3349595448017 L 90.69965337117515 270.9961993827819 C 90.69965337117515 271.9961993827819 89.69965337117515 272.9961993827819 88.69965337117515 272.9961993827819 L 80.68541717529297 272.9961993827819 C 79.68541717529297 272.9961993827819 78.68541717529297 271.9961993827819 78.68541717529297 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 78.68541717529297 270.9961993827819 L 78.68541717529297 203.3349595448017 C 78.68541717529297 202.3349595448017 79.68541717529297 201.3349595448017 80.68541717529297 201.3349595448017 L 88.69965337117515 201.3349595448017 C 89.69965337117515 201.3349595448017 90.69965337117515 202.3349595448017 90.69965337117515 203.3349595448017 L 90.69965337117515 270.9961993827819 C 90.69965337117515 271.9961993827819 89.69965337117515 272.9961993827819 88.69965337117515 272.9961993827819 L 80.68541717529297 272.9961993827819 C 79.68541717529297 272.9961993827819 78.68541717529297 271.9961993827819 78.68541717529297 270.9961993827819 Z " pathFrom="M 78.68541717529297 270.9961993827819 L 78.68541717529297 203.3349595448017 C 78.68541717529297 202.3349595448017 79.68541717529297 201.3349595448017 80.68541717529297 201.3349595448017 L 88.69965337117515 201.3349595448017 C 89.69965337117515 201.3349595448017 90.69965337117515 202.3349595448017 90.69965337117515 203.3349595448017 L 90.69965337117515 270.9961993827819 C 90.69965337117515 271.9961993827819 89.69965337117515 272.9961993827819 88.69965337117515 272.9961993827819 L 80.68541717529297 272.9961993827819 C 79.68541717529297 272.9961993827819 78.68541717529297 271.9961993827819 78.68541717529297 270.9961993827819 Z  L 78.68541717529297 272.9961993827819 L 90.69965337117515 272.9961993827819 L 90.69965337117515 272.9961993827819 L 90.69965337117515 272.9961993827819 L 90.69965337117515 272.9961993827819 L 90.69965337117515 272.9961993827819 L 78.68541717529297 272.9961993827819 Z" cy="201.3339595448017" cx="130.5923619588216" j="1" val="21" barHeight="71.66123983798026" barWidth="13.114236195882164"></path><path id="SvgjsPath1520" d="M 131.14236195882162 270.9961993827819 L 131.14236195882162 165.79811962966917 C 131.14236195882162 164.79811962966917 132.14236195882162 163.79811962966917 133.14236195882162 163.79811962966917 L 141.1565981547038 163.79811962966917 C 142.1565981547038 163.79811962966917 143.1565981547038 164.79811962966917 143.1565981547038 165.79811962966917 L 143.1565981547038 270.9961993827819 C 143.1565981547038 271.9961993827819 142.1565981547038 272.9961993827819 141.1565981547038 272.9961993827819 L 133.14236195882162 272.9961993827819 C 132.14236195882162 272.9961993827819 131.14236195882162 271.9961993827819 131.14236195882162 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 131.14236195882162 270.9961993827819 L 131.14236195882162 165.79811962966917 C 131.14236195882162 164.79811962966917 132.14236195882162 163.79811962966917 133.14236195882162 163.79811962966917 L 141.1565981547038 163.79811962966917 C 142.1565981547038 163.79811962966917 143.1565981547038 164.79811962966917 143.1565981547038 165.79811962966917 L 143.1565981547038 270.9961993827819 C 143.1565981547038 271.9961993827819 142.1565981547038 272.9961993827819 141.1565981547038 272.9961993827819 L 133.14236195882162 272.9961993827819 C 132.14236195882162 272.9961993827819 131.14236195882162 271.9961993827819 131.14236195882162 270.9961993827819 Z " pathFrom="M 131.14236195882162 270.9961993827819 L 131.14236195882162 165.79811962966917 C 131.14236195882162 164.79811962966917 132.14236195882162 163.79811962966917 133.14236195882162 163.79811962966917 L 141.1565981547038 163.79811962966917 C 142.1565981547038 163.79811962966917 143.1565981547038 164.79811962966917 143.1565981547038 165.79811962966917 L 143.1565981547038 270.9961993827819 C 143.1565981547038 271.9961993827819 142.1565981547038 272.9961993827819 141.1565981547038 272.9961993827819 L 133.14236195882162 272.9961993827819 C 132.14236195882162 272.9961993827819 131.14236195882162 271.9961993827819 131.14236195882162 270.9961993827819 Z  L 131.14236195882162 272.9961993827819 L 143.1565981547038 272.9961993827819 L 143.1565981547038 272.9961993827819 L 143.1565981547038 272.9961993827819 L 143.1565981547038 272.9961993827819 L 143.1565981547038 272.9961993827819 L 131.14236195882162 272.9961993827819 Z" cy="163.79711962966917" cx="183.04930674235027" j="2" val="32" barHeight="109.19807975311276" barWidth="13.114236195882164"></path><path id="SvgjsPath1522" d="M 183.59930674235028 270.9961993827819 L 183.59930674235028 148.73591966824532 C 183.59930674235028 147.73591966824532 184.59930674235028 146.73591966824532 185.59930674235028 146.73591966824532 L 193.61354293823246 146.73591966824532 C 194.61354293823246 146.73591966824532 195.61354293823246 147.73591966824532 195.61354293823246 148.73591966824532 L 195.61354293823246 270.9961993827819 C 195.61354293823246 271.9961993827819 194.61354293823246 272.9961993827819 193.61354293823246 272.9961993827819 L 185.59930674235028 272.9961993827819 C 184.59930674235028 272.9961993827819 183.59930674235028 271.9961993827819 183.59930674235028 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 183.59930674235028 270.9961993827819 L 183.59930674235028 148.73591966824532 C 183.59930674235028 147.73591966824532 184.59930674235028 146.73591966824532 185.59930674235028 146.73591966824532 L 193.61354293823246 146.73591966824532 C 194.61354293823246 146.73591966824532 195.61354293823246 147.73591966824532 195.61354293823246 148.73591966824532 L 195.61354293823246 270.9961993827819 C 195.61354293823246 271.9961993827819 194.61354293823246 272.9961993827819 193.61354293823246 272.9961993827819 L 185.59930674235028 272.9961993827819 C 184.59930674235028 272.9961993827819 183.59930674235028 271.9961993827819 183.59930674235028 270.9961993827819 Z " pathFrom="M 183.59930674235028 270.9961993827819 L 183.59930674235028 148.73591966824532 C 183.59930674235028 147.73591966824532 184.59930674235028 146.73591966824532 185.59930674235028 146.73591966824532 L 193.61354293823246 146.73591966824532 C 194.61354293823246 146.73591966824532 195.61354293823246 147.73591966824532 195.61354293823246 148.73591966824532 L 195.61354293823246 270.9961993827819 C 195.61354293823246 271.9961993827819 194.61354293823246 272.9961993827819 193.61354293823246 272.9961993827819 L 185.59930674235028 272.9961993827819 C 184.59930674235028 272.9961993827819 183.59930674235028 271.9961993827819 183.59930674235028 270.9961993827819 Z  L 183.59930674235028 272.9961993827819 L 195.61354293823246 272.9961993827819 L 195.61354293823246 272.9961993827819 L 195.61354293823246 272.9961993827819 L 195.61354293823246 272.9961993827819 L 195.61354293823246 272.9961993827819 L 183.59930674235028 272.9961993827819 Z" cy="146.7349196682453" cx="235.50625152587892" j="3" val="37" barHeight="126.26027971453664" barWidth="13.114236195882164"></path><path id="SvgjsPath1524" d="M 236.05625152587893 270.9961993827819 L 236.05625152587893 196.51007956023213 C 236.05625152587893 195.51007956023213 237.05625152587893 194.51007956023213 238.05625152587893 194.51007956023213 L 246.0704877217611 194.51007956023213 C 247.0704877217611 194.51007956023213 248.0704877217611 195.51007956023213 248.0704877217611 196.51007956023213 L 248.0704877217611 270.9961993827819 C 248.0704877217611 271.9961993827819 247.0704877217611 272.9961993827819 246.0704877217611 272.9961993827819 L 238.05625152587893 272.9961993827819 C 237.05625152587893 272.9961993827819 236.05625152587893 271.9961993827819 236.05625152587893 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 236.05625152587893 270.9961993827819 L 236.05625152587893 196.51007956023213 C 236.05625152587893 195.51007956023213 237.05625152587893 194.51007956023213 238.05625152587893 194.51007956023213 L 246.0704877217611 194.51007956023213 C 247.0704877217611 194.51007956023213 248.0704877217611 195.51007956023213 248.0704877217611 196.51007956023213 L 248.0704877217611 270.9961993827819 C 248.0704877217611 271.9961993827819 247.0704877217611 272.9961993827819 246.0704877217611 272.9961993827819 L 238.05625152587893 272.9961993827819 C 237.05625152587893 272.9961993827819 236.05625152587893 271.9961993827819 236.05625152587893 270.9961993827819 Z " pathFrom="M 236.05625152587893 270.9961993827819 L 236.05625152587893 196.51007956023213 C 236.05625152587893 195.51007956023213 237.05625152587893 194.51007956023213 238.05625152587893 194.51007956023213 L 246.0704877217611 194.51007956023213 C 247.0704877217611 194.51007956023213 248.0704877217611 195.51007956023213 248.0704877217611 196.51007956023213 L 248.0704877217611 270.9961993827819 C 248.0704877217611 271.9961993827819 247.0704877217611 272.9961993827819 246.0704877217611 272.9961993827819 L 238.05625152587893 272.9961993827819 C 237.05625152587893 272.9961993827819 236.05625152587893 271.9961993827819 236.05625152587893 270.9961993827819 Z  L 236.05625152587893 272.9961993827819 L 248.0704877217611 272.9961993827819 L 248.0704877217611 272.9961993827819 L 248.0704877217611 272.9961993827819 L 248.0704877217611 272.9961993827819 L 248.0704877217611 272.9961993827819 L 236.05625152587893 272.9961993827819 Z" cy="194.50907956023212" cx="287.9631963094075" j="4" val="23" barHeight="78.48611982254981" barWidth="13.114236195882164"></path><path id="SvgjsPath1526" d="M 288.51319630940753 270.9961993827819 L 288.51319630940753 165.79811962966917 C 288.51319630940753 164.79811962966917 289.51319630940753 163.79811962966917 290.51319630940753 163.79811962966917 L 298.52743250528965 163.79811962966917 C 299.52743250528965 163.79811962966917 300.52743250528965 164.79811962966917 300.52743250528965 165.79811962966917 L 300.52743250528965 270.9961993827819 C 300.52743250528965 271.9961993827819 299.52743250528965 272.9961993827819 298.52743250528965 272.9961993827819 L 290.51319630940753 272.9961993827819 C 289.51319630940753 272.9961993827819 288.51319630940753 271.9961993827819 288.51319630940753 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 288.51319630940753 270.9961993827819 L 288.51319630940753 165.79811962966917 C 288.51319630940753 164.79811962966917 289.51319630940753 163.79811962966917 290.51319630940753 163.79811962966917 L 298.52743250528965 163.79811962966917 C 299.52743250528965 163.79811962966917 300.52743250528965 164.79811962966917 300.52743250528965 165.79811962966917 L 300.52743250528965 270.9961993827819 C 300.52743250528965 271.9961993827819 299.52743250528965 272.9961993827819 298.52743250528965 272.9961993827819 L 290.51319630940753 272.9961993827819 C 289.51319630940753 272.9961993827819 288.51319630940753 271.9961993827819 288.51319630940753 270.9961993827819 Z " pathFrom="M 288.51319630940753 270.9961993827819 L 288.51319630940753 165.79811962966917 C 288.51319630940753 164.79811962966917 289.51319630940753 163.79811962966917 290.51319630940753 163.79811962966917 L 298.52743250528965 163.79811962966917 C 299.52743250528965 163.79811962966917 300.52743250528965 164.79811962966917 300.52743250528965 165.79811962966917 L 300.52743250528965 270.9961993827819 C 300.52743250528965 271.9961993827819 299.52743250528965 272.9961993827819 298.52743250528965 272.9961993827819 L 290.51319630940753 272.9961993827819 C 289.51319630940753 272.9961993827819 288.51319630940753 271.9961993827819 288.51319630940753 270.9961993827819 Z  L 288.51319630940753 272.9961993827819 L 300.52743250528965 272.9961993827819 L 300.52743250528965 272.9961993827819 L 300.52743250528965 272.9961993827819 L 300.52743250528965 272.9961993827819 L 300.52743250528965 272.9961993827819 L 288.51319630940753 272.9961993827819 Z" cy="163.79711962966917" cx="340.42014109293615" j="5" val="32" barHeight="109.19807975311276" barWidth="13.114236195882164"></path><path id="SvgjsPath1528" d="M 340.97014109293616 270.9961993827819 L 340.97014109293616 114.61151974539757 C 340.97014109293616 113.61151974539757 341.97014109293616 112.61151974539757 342.97014109293616 112.61151974539757 L 350.9843772888183 112.61151974539757 C 351.9843772888183 112.61151974539757 352.9843772888183 113.61151974539757 352.9843772888183 114.61151974539757 L 352.9843772888183 270.9961993827819 C 352.9843772888183 271.9961993827819 351.9843772888183 272.9961993827819 350.9843772888183 272.9961993827819 L 342.97014109293616 272.9961993827819 C 341.97014109293616 272.9961993827819 340.97014109293616 271.9961993827819 340.97014109293616 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 340.97014109293616 270.9961993827819 L 340.97014109293616 114.61151974539757 C 340.97014109293616 113.61151974539757 341.97014109293616 112.61151974539757 342.97014109293616 112.61151974539757 L 350.9843772888183 112.61151974539757 C 351.9843772888183 112.61151974539757 352.9843772888183 113.61151974539757 352.9843772888183 114.61151974539757 L 352.9843772888183 270.9961993827819 C 352.9843772888183 271.9961993827819 351.9843772888183 272.9961993827819 350.9843772888183 272.9961993827819 L 342.97014109293616 272.9961993827819 C 341.97014109293616 272.9961993827819 340.97014109293616 271.9961993827819 340.97014109293616 270.9961993827819 Z " pathFrom="M 340.97014109293616 270.9961993827819 L 340.97014109293616 114.61151974539757 C 340.97014109293616 113.61151974539757 341.97014109293616 112.61151974539757 342.97014109293616 112.61151974539757 L 350.9843772888183 112.61151974539757 C 351.9843772888183 112.61151974539757 352.9843772888183 113.61151974539757 352.9843772888183 114.61151974539757 L 352.9843772888183 270.9961993827819 C 352.9843772888183 271.9961993827819 351.9843772888183 272.9961993827819 350.9843772888183 272.9961993827819 L 342.97014109293616 272.9961993827819 C 341.97014109293616 272.9961993827819 340.97014109293616 271.9961993827819 340.97014109293616 270.9961993827819 Z  L 340.97014109293616 272.9961993827819 L 352.9843772888183 272.9961993827819 L 352.9843772888183 272.9961993827819 L 352.9843772888183 272.9961993827819 L 352.9843772888183 272.9961993827819 L 352.9843772888183 272.9961993827819 L 340.97014109293616 272.9961993827819 Z" cy="112.61051974539757" cx="392.8770858764648" j="6" val="47" barHeight="160.38467963738438" barWidth="13.114236195882164"></path><path id="SvgjsPath1530" d="M 393.4270858764648 270.9961993827819 L 393.4270858764648 169.21055962195396 C 393.4270858764648 168.21055962195396 394.4270858764648 167.21055962195396 395.4270858764648 167.21055962195396 L 403.4413220723469 167.21055962195396 C 404.4413220723469 167.21055962195396 405.4413220723469 168.21055962195396 405.4413220723469 169.21055962195396 L 405.4413220723469 270.9961993827819 C 405.4413220723469 271.9961993827819 404.4413220723469 272.9961993827819 403.4413220723469 272.9961993827819 L 395.4270858764648 272.9961993827819 C 394.4270858764648 272.9961993827819 393.4270858764648 271.9961993827819 393.4270858764648 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 393.4270858764648 270.9961993827819 L 393.4270858764648 169.21055962195396 C 393.4270858764648 168.21055962195396 394.4270858764648 167.21055962195396 395.4270858764648 167.21055962195396 L 403.4413220723469 167.21055962195396 C 404.4413220723469 167.21055962195396 405.4413220723469 168.21055962195396 405.4413220723469 169.21055962195396 L 405.4413220723469 270.9961993827819 C 405.4413220723469 271.9961993827819 404.4413220723469 272.9961993827819 403.4413220723469 272.9961993827819 L 395.4270858764648 272.9961993827819 C 394.4270858764648 272.9961993827819 393.4270858764648 271.9961993827819 393.4270858764648 270.9961993827819 Z " pathFrom="M 393.4270858764648 270.9961993827819 L 393.4270858764648 169.21055962195396 C 393.4270858764648 168.21055962195396 394.4270858764648 167.21055962195396 395.4270858764648 167.21055962195396 L 403.4413220723469 167.21055962195396 C 404.4413220723469 167.21055962195396 405.4413220723469 168.21055962195396 405.4413220723469 169.21055962195396 L 405.4413220723469 270.9961993827819 C 405.4413220723469 271.9961993827819 404.4413220723469 272.9961993827819 403.4413220723469 272.9961993827819 L 395.4270858764648 272.9961993827819 C 394.4270858764648 272.9961993827819 393.4270858764648 271.9961993827819 393.4270858764648 270.9961993827819 Z  L 393.4270858764648 272.9961993827819 L 405.4413220723469 272.9961993827819 L 405.4413220723469 272.9961993827819 L 405.4413220723469 272.9961993827819 L 405.4413220723469 272.9961993827819 L 405.4413220723469 272.9961993827819 L 393.4270858764648 272.9961993827819 Z" cy="167.20955962195396" cx="445.3340306599934" j="7" val="31" barHeight="105.78563976082799" barWidth="13.114236195882164"></path><path id="SvgjsPath1532" d="M 445.8840306599934 270.9961993827819 L 445.8840306599934 90.72443979940417 C 445.8840306599934 89.72443979940417 446.8840306599934 88.72443979940417 447.8840306599934 88.72443979940417 L 455.89826685587553 88.72443979940417 C 456.89826685587553 88.72443979940417 457.89826685587553 89.72443979940417 457.89826685587553 90.72443979940417 L 457.89826685587553 270.9961993827819 C 457.89826685587553 271.9961993827819 456.89826685587553 272.9961993827819 455.89826685587553 272.9961993827819 L 447.8840306599934 272.9961993827819 C 446.8840306599934 272.9961993827819 445.8840306599934 271.9961993827819 445.8840306599934 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 445.8840306599934 270.9961993827819 L 445.8840306599934 90.72443979940417 C 445.8840306599934 89.72443979940417 446.8840306599934 88.72443979940417 447.8840306599934 88.72443979940417 L 455.89826685587553 88.72443979940417 C 456.89826685587553 88.72443979940417 457.89826685587553 89.72443979940417 457.89826685587553 90.72443979940417 L 457.89826685587553 270.9961993827819 C 457.89826685587553 271.9961993827819 456.89826685587553 272.9961993827819 455.89826685587553 272.9961993827819 L 447.8840306599934 272.9961993827819 C 446.8840306599934 272.9961993827819 445.8840306599934 271.9961993827819 445.8840306599934 270.9961993827819 Z " pathFrom="M 445.8840306599934 270.9961993827819 L 445.8840306599934 90.72443979940417 C 445.8840306599934 89.72443979940417 446.8840306599934 88.72443979940417 447.8840306599934 88.72443979940417 L 455.89826685587553 88.72443979940417 C 456.89826685587553 88.72443979940417 457.89826685587553 89.72443979940417 457.89826685587553 90.72443979940417 L 457.89826685587553 270.9961993827819 C 457.89826685587553 271.9961993827819 456.89826685587553 272.9961993827819 455.89826685587553 272.9961993827819 L 447.8840306599934 272.9961993827819 C 446.8840306599934 272.9961993827819 445.8840306599934 271.9961993827819 445.8840306599934 270.9961993827819 Z  L 445.8840306599934 272.9961993827819 L 457.89826685587553 272.9961993827819 L 457.89826685587553 272.9961993827819 L 457.89826685587553 272.9961993827819 L 457.89826685587553 272.9961993827819 L 457.89826685587553 272.9961993827819 L 445.8840306599934 272.9961993827819 Z" cy="88.72343979940416" cx="497.79097544352203" j="8" val="54" barHeight="184.2717595833778" barWidth="13.114236195882164"></path><path id="SvgjsPath1534" d="M 498.34097544352204 270.9961993827819 L 498.34097544352204 165.79811962966917 C 498.34097544352204 164.79811962966917 499.34097544352204 163.79811962966917 500.34097544352204 163.79811962966917 L 508.35521163940416 163.79811962966917 C 509.35521163940416 163.79811962966917 510.35521163940416 164.79811962966917 510.35521163940416 165.79811962966917 L 510.35521163940416 270.9961993827819 C 510.35521163940416 271.9961993827819 509.35521163940416 272.9961993827819 508.35521163940416 272.9961993827819 L 500.34097544352204 272.9961993827819 C 499.34097544352204 272.9961993827819 498.34097544352204 271.9961993827819 498.34097544352204 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 498.34097544352204 270.9961993827819 L 498.34097544352204 165.79811962966917 C 498.34097544352204 164.79811962966917 499.34097544352204 163.79811962966917 500.34097544352204 163.79811962966917 L 508.35521163940416 163.79811962966917 C 509.35521163940416 163.79811962966917 510.35521163940416 164.79811962966917 510.35521163940416 165.79811962966917 L 510.35521163940416 270.9961993827819 C 510.35521163940416 271.9961993827819 509.35521163940416 272.9961993827819 508.35521163940416 272.9961993827819 L 500.34097544352204 272.9961993827819 C 499.34097544352204 272.9961993827819 498.34097544352204 271.9961993827819 498.34097544352204 270.9961993827819 Z " pathFrom="M 498.34097544352204 270.9961993827819 L 498.34097544352204 165.79811962966917 C 498.34097544352204 164.79811962966917 499.34097544352204 163.79811962966917 500.34097544352204 163.79811962966917 L 508.35521163940416 163.79811962966917 C 509.35521163940416 163.79811962966917 510.35521163940416 164.79811962966917 510.35521163940416 165.79811962966917 L 510.35521163940416 270.9961993827819 C 510.35521163940416 271.9961993827819 509.35521163940416 272.9961993827819 508.35521163940416 272.9961993827819 L 500.34097544352204 272.9961993827819 C 499.34097544352204 272.9961993827819 498.34097544352204 271.9961993827819 498.34097544352204 270.9961993827819 Z  L 498.34097544352204 272.9961993827819 L 510.35521163940416 272.9961993827819 L 510.35521163940416 272.9961993827819 L 510.35521163940416 272.9961993827819 L 510.35521163940416 272.9961993827819 L 510.35521163940416 272.9961993827819 L 498.34097544352204 272.9961993827819 Z" cy="163.79711962966917" cx="550.2479202270508" j="9" val="32" barHeight="109.19807975311276" barWidth="13.114236195882164"></path><path id="SvgjsPath1536" d="M 550.7979202270508 270.9961993827819 L 550.7979202270508 206.74739953708647 C 550.7979202270508 205.74739953708647 551.7979202270508 204.74739953708647 552.7979202270508 204.74739953708647 L 560.812156422933 204.74739953708647 C 561.812156422933 204.74739953708647 562.812156422933 205.74739953708647 562.812156422933 206.74739953708647 L 562.812156422933 270.9961993827819 C 562.812156422933 271.9961993827819 561.812156422933 272.9961993827819 560.812156422933 272.9961993827819 L 552.7979202270508 272.9961993827819 C 551.7979202270508 272.9961993827819 550.7979202270508 271.9961993827819 550.7979202270508 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 550.7979202270508 270.9961993827819 L 550.7979202270508 206.74739953708647 C 550.7979202270508 205.74739953708647 551.7979202270508 204.74739953708647 552.7979202270508 204.74739953708647 L 560.812156422933 204.74739953708647 C 561.812156422933 204.74739953708647 562.812156422933 205.74739953708647 562.812156422933 206.74739953708647 L 562.812156422933 270.9961993827819 C 562.812156422933 271.9961993827819 561.812156422933 272.9961993827819 560.812156422933 272.9961993827819 L 552.7979202270508 272.9961993827819 C 551.7979202270508 272.9961993827819 550.7979202270508 271.9961993827819 550.7979202270508 270.9961993827819 Z " pathFrom="M 550.7979202270508 270.9961993827819 L 550.7979202270508 206.74739953708647 C 550.7979202270508 205.74739953708647 551.7979202270508 204.74739953708647 552.7979202270508 204.74739953708647 L 560.812156422933 204.74739953708647 C 561.812156422933 204.74739953708647 562.812156422933 205.74739953708647 562.812156422933 206.74739953708647 L 562.812156422933 270.9961993827819 C 562.812156422933 271.9961993827819 561.812156422933 272.9961993827819 560.812156422933 272.9961993827819 L 552.7979202270508 272.9961993827819 C 551.7979202270508 272.9961993827819 550.7979202270508 271.9961993827819 550.7979202270508 270.9961993827819 Z  L 550.7979202270508 272.9961993827819 L 562.812156422933 272.9961993827819 L 562.812156422933 272.9961993827819 L 562.812156422933 272.9961993827819 L 562.812156422933 272.9961993827819 L 562.812156422933 272.9961993827819 L 550.7979202270508 272.9961993827819 Z" cy="204.74639953708646" cx="602.7048650105795" j="10" val="20" barHeight="68.24879984569549" barWidth="13.114236195882164"></path><path id="SvgjsPath1538" d="M 603.2548650105795 270.9961993827819 L 603.2548650105795 145.32347967596053 C 603.2548650105795 144.32347967596053 604.2548650105795 143.32347967596053 605.2548650105795 143.32347967596053 L 613.2691012064616 143.32347967596053 C 614.2691012064616 143.32347967596053 615.2691012064616 144.32347967596053 615.2691012064616 145.32347967596053 L 615.2691012064616 270.9961993827819 C 615.2691012064616 271.9961993827819 614.2691012064616 272.9961993827819 613.2691012064616 272.9961993827819 L 605.2548650105795 272.9961993827819 C 604.2548650105795 272.9961993827819 603.2548650105795 271.9961993827819 603.2548650105795 270.9961993827819 Z " fill="rgba(233,233,233,0.85)" fill-opacity="1" stroke="#e9e9e9" stroke-opacity="1" stroke-linecap="round" stroke-width="1.1" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMaskulfckl9oh)" pathTo="M 603.2548650105795 270.9961993827819 L 603.2548650105795 145.32347967596053 C 603.2548650105795 144.32347967596053 604.2548650105795 143.32347967596053 605.2548650105795 143.32347967596053 L 613.2691012064616 143.32347967596053 C 614.2691012064616 143.32347967596053 615.2691012064616 144.32347967596053 615.2691012064616 145.32347967596053 L 615.2691012064616 270.9961993827819 C 615.2691012064616 271.9961993827819 614.2691012064616 272.9961993827819 613.2691012064616 272.9961993827819 L 605.2548650105795 272.9961993827819 C 604.2548650105795 272.9961993827819 603.2548650105795 271.9961993827819 603.2548650105795 270.9961993827819 Z " pathFrom="M 603.2548650105795 270.9961993827819 L 603.2548650105795 145.32347967596053 C 603.2548650105795 144.32347967596053 604.2548650105795 143.32347967596053 605.2548650105795 143.32347967596053 L 613.2691012064616 143.32347967596053 C 614.2691012064616 143.32347967596053 615.2691012064616 144.32347967596053 615.2691012064616 145.32347967596053 L 615.2691012064616 270.9961993827819 C 615.2691012064616 271.9961993827819 614.2691012064616 272.9961993827819 613.2691012064616 272.9961993827819 L 605.2548650105795 272.9961993827819 C 604.2548650105795 272.9961993827819 603.2548650105795 271.9961993827819 603.2548650105795 270.9961993827819 Z  L 603.2548650105795 272.9961993827819 L 615.2691012064616 272.9961993827819 L 615.2691012064616 272.9961993827819 L 615.2691012064616 272.9961993827819 L 615.2691012064616 272.9961993827819 L 615.2691012064616 272.9961993827819 L 603.2548650105795 272.9961993827819 Z" cy="143.32247967596052" cx="655.1618097941082" j="11" val="38" barHeight="129.67271970682143" barWidth="13.114236195882164"></path><g id="SvgjsG1513" class="apexcharts-bar-goals-markers"><g id="SvgjsG1515" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1517" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1519" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1521" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1523" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1525" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1527" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1529" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1531" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1533" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1535" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g><g id="SvgjsG1537" className="apexcharts-bar-goals-groups" class="apexcharts-hidden-element-shown" clip-path="url(#gridRectMarkerMaskulfckl9oh)"></g></g><g id="SvgjsG1514" class="apexcharts-bar-shadows apexcharts-hidden-element-shown"></g></g><g id="SvgjsG1484" class="apexcharts-datalabels apexcharts-hidden-element-shown" data:realIndex="0"></g><g id="SvgjsG1512" class="apexcharts-datalabels apexcharts-hidden-element-shown" data:realIndex="1"></g></g><line id="SvgjsLine1563" x1="0" y1="0" x2="629.4833374023438" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1564" x1="0" y1="0" x2="629.4833374023438" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line><g id="SvgjsG1565" class="apexcharts-xaxis" transform="translate(0, 0)"><g id="SvgjsG1566" class="apexcharts-xaxis-texts-g" transform="translate(0, -4)"><text id="SvgjsText1568" font-family="Helvetica, Arial, sans-serif" x="26.228472391764324" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1569">Jan</tspan><title>Jan</title></text><text id="SvgjsText1571" font-family="Helvetica, Arial, sans-serif" x="78.68541717529297" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1572">Feb</tspan><title>Feb</title></text><text id="SvgjsText1574" font-family="Helvetica, Arial, sans-serif" x="131.14236195882162" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1575">Mar</tspan><title>Mar</title></text><text id="SvgjsText1577" font-family="Helvetica, Arial, sans-serif" x="183.59930674235028" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1578">Apr</tspan><title>Apr</title></text><text id="SvgjsText1580" font-family="Helvetica, Arial, sans-serif" x="236.05625152587893" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1581">May</tspan><title>May</title></text><text id="SvgjsText1583" font-family="Helvetica, Arial, sans-serif" x="288.51319630940753" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1584">Jun</tspan><title>Jun</title></text><text id="SvgjsText1586" font-family="Helvetica, Arial, sans-serif" x="340.97014109293616" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1587">Jul</tspan><title>Jul</title></text><text id="SvgjsText1589" font-family="Helvetica, Arial, sans-serif" x="393.4270858764648" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1590">Aug</tspan><title>Aug</title></text><text id="SvgjsText1592" font-family="Helvetica, Arial, sans-serif" x="445.8840306599934" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1593">Sep</tspan><title>Sep</title></text><text id="SvgjsText1595" font-family="Helvetica, Arial, sans-serif" x="498.34097544352204" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1596">Oct</tspan><title>Oct</title></text><text id="SvgjsText1598" font-family="Helvetica, Arial, sans-serif" x="550.7979202270508" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1599">Nov</tspan><title>Nov</title></text><text id="SvgjsText1601" font-family="Helvetica, Arial, sans-serif" x="603.2548650105795" y="301.99519938278195" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1602">Dec</tspan><title>Dec</title></text></g></g><g id="SvgjsG1621" class="apexcharts-yaxis-annotations"></g><g id="SvgjsG1622" class="apexcharts-xaxis-annotations"></g><g id="SvgjsG1623" class="apexcharts-point-annotations"></g></g></svg><div class="apexcharts-tooltip apexcharts-theme-light"><div class="apexcharts-tooltip-title" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"></div><div class="apexcharts-tooltip-series-group" style="order: 1;"><span class="apexcharts-tooltip-marker" style="background-color: rgb(132, 90, 223);"></span><div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div><div class="apexcharts-tooltip-series-group" style="order: 2;"><span class="apexcharts-tooltip-marker" style="background-color: rgb(233, 233, 233);"></span><div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div></div><div class="apexcharts-yaxistooltip apexcharts-yaxistooltip-0 apexcharts-yaxistooltip-left apexcharts-theme-light"><div class="apexcharts-yaxistooltip-text"></div></div><div class="apexcharts-toolbar" style="top: 0px; right: 3px;"><div class="apexcharts-menu-icon" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div><div class="apexcharts-menu"><div class="apexcharts-menu-item exportSVG" title="Download SVG">Download SVG</div><div class="apexcharts-menu-item exportPNG" title="Download PNG">Download PNG</div><div class="apexcharts-menu-item exportCSV" title="Download CSV">Download CSV</div></div></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-5 col-xl-5 col-lg-12">
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="card custom-card">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap align-items-top gap-2">
+                                            <div class="me-1">
+                                                <span class="avatar avatar-lg bg-primary">
+                                                    <i class="ti ti-wallet fs-20"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <h5 class="d-block fw-semibold fs-18 mb-1">1200</h5>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="text-muted fs-12">NO of Resumes</div>
+                                                    {% comment %} <div class="text-success"><i class="ti ti-trending-up fs-16 me-1 align-middle d-inline-flex"></i>+2.02%</div> {% endcomment %}
+                                                </div>
+                                                <a href="javascript:void(0);" class="text-primary fs-12">View All<i class="ti ti-arrow-narrow-right ms-2 fw-semibold d-inline-block"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="card custom-card">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap gap-2 align-items-top">
+                                            <div class="me-1">
+                                                <span class="avatar avatar-lg bg-secondary">
+                                                    <i class="ti ti-users fs-20"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <h5 class="d-block fw-semibold fs-18 mb-1">350</h5>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="text-muted fs-12">Onboard Candidates </div>
+                                                    {% comment %} <div class="text-danger"><i class="ti ti-trending-down fs-16 me-1 align-middle d-inline-flex"></i>-0.24%</div> {% endcomment %}
+                                                </div>
+                                                <a href="javascript:void(0);" class="text-secondary fs-12">View All<i class="ti ti-arrow-narrow-right ms-2 fw-semibold d-inline-block"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="card custom-card">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap gap-2 align-items-top">
+                                            <div class="me-1">
+                                                <span class="avatar avatar-lg bg-warning">
+                                                    <i class="ti ti-id fs-20"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <h5 class="d-block fw-semibold fs-18 mb-1">573</h5>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="text-muted fs-12">Selected Candidates</div>
+                                                    {% comment %} <div class="text-danger"><i class="ti ti-trending-down fs-16 me-1 align-middle d-inline-flex"></i>-1.32%</div> {% endcomment %}
+                                                </div>
+                                                <a href="javascript:void(0);" class="text-warning fs-12">View All<i class="ti ti-arrow-narrow-right ms-2 fw-semibold d-inline-block"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="card custom-card">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap gap-2 align-items-top">
+                                            <div class="me-1">
+                                                <span class="avatar avatar-lg bg-danger">
+                                                    <i class="ti ti-gift fs-20"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-fill">
+                                                <h5 class="d-block fw-semibold fs-18 mb-1">2,389</h5>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="text-muted fs-12">Pending JD's</div>
+                                                    {% comment %} <div class="text-success"><i class="ti ti-trending-up fs-16 me-1 align-middle d-inline-flex"></i>+0.89%</div> {% endcomment %}
+                                                </div>
+                                                <a href="javascript:void(0);" class="text-danger fs-12">View All<i class="ti ti-arrow-narrow-right ms-2 fw-semibold d-inline-block"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card custom-card overflow-hidden">
+                                    <div class="card-header justify-content-between">
+                                        <div class="card-title">
+                                            My Job Post
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-light btn-sm">View All</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table text-nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Job Title</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Company Name</th>
+                                                        <th scope="col">Job Type</th>
+                                                        <th scope="col">Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div>
+                                                                <div>
+                                                                    ui/ux Designing
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="progress progress-xs course-status-progress progress-animate me-2" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                                    <div class="progress-bar progress-bar-striped bg-primary" style="width: 60%"></div>
+                                                                </div>
+                                                                <div>60%</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>ABC Company</td>
+                                                        <td><span class="badge bg-outline-primary">Full Time</span></td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                {% comment %} <div class="me-2">
+                                                                    <span class="avatar avatar-sm avatar-rounded">
+                                                                        <img src="../assets/images/faces/2.jpg" alt="">
+                                                                    </span>
+                                                                </div> {% endcomment %}
+                                                                <div class="badge bg-outline-primary">High</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div>
+                                                                <div>
+                                                                    Project Management
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="progress progress-xs course-status-progress progress-animate me-2" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                    <div class="progress-bar progress-bar-striped bg-success" style="width: 100%"></div>
+                                                                </div>
+                                                                <div>100%</div>
+                                                            </div>
+                                                        </td>
+                                                         <td>ABC Company</td>
+                                                        <td><span class="badge bg-outline-primary">Full Time</span></td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                {% comment %} <div class="me-2">
+                                                                    <span class="avatar avatar-sm avatar-rounded">
+                                                                        <img src="../assets/images/faces/2.jpg" alt="">
+                                                                    </span>
+                                                                </div> {% endcomment %}
+                                                                <div class="badge bg-outline-success">medium</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div>
+                                                                <div>
+                                                                    Python
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="progress progress-xs course-status-progress progress-animate me-2" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100">
+                                                                    <div class="progress-bar progress-bar-striped bg-warning" style="width: 38%"></div>
+                                                                </div>
+                                                                <div>38%</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>ABC Company</td>
+                                                        <td><span class="badge bg-outline-danger">part Time</span></td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                {% comment %} <div class="me-2">
+                                                                    <span class="avatar avatar-sm avatar-rounded">
+                                                                        <img src="../assets/images/faces/2.jpg" alt="">
+                                                                    </span>
+                                                                </div> {% endcomment %}
+                                                                <div class="badge bg-outline-info">low</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div>
+                                                                <div>
+                                                                    Digital Marketing
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="progress progress-xs course-status-progress progress-animate me-2" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                                                    <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
+                                                                </div>
+                                                                <div>75%</div>
+                                                            </div>
+                                                        </td>
+                                                         <td>ABC Company</td>
+                                                        <td><span class="badge bg-outline-primary">Full Time</span></td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                {% comment %} <div class="me-2">
+                                                                    <span class="avatar avatar-sm avatar-rounded">
+                                                                        <img src="../assets/images/faces/2.jpg" alt="">
+                                                                    </span>
+                                                                </div> {% endcomment %}
+                                                                <div class="badge bg-outline-success">medium</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div>
+                                                                <div>
+                                                                    Full Stack Development
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="progress progress-xs course-status-progress progress-animate me-2" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                                                                    <div class="progress-bar progress-bar-striped bg-primary" style="width: 55%"></div>
+                                                                </div>
+                                                                <div>55%</div>
+                                                            </div>
+                                                        </td>
+                                                         <td>ABC Company</td>
+                                                        <td><span class="badge bg-outline-primary">Full Time</span></td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                {% comment %} <div class="me-2">
+                                                                    <span class="avatar avatar-sm avatar-rounded">
+                                                                        <img src="../assets/images/faces/2.jpg" alt="">
+                                                                    </span>
+                                                                </div> {% endcomment %}
+                                                                <div class="badge bg-outline-success">medium</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="border-bottom-0">
+                                                            <div>
+                                                                <div>
+                                                                    Stocks &amp; Trading
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td class="border-bottom-0">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="progress progress-xs course-status-progress progress-animate me-2" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100">
+                                                                    <div class="progress-bar progress-bar-striped bg-danger" style="width: 29%"></div>
+                                                                </div>
+                                                                <div>29%</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>ABC Company</td>
+                                                        <td><span class="badge bg-outline-danger">part Time</span></td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                {% comment %} <div class="me-2">
+                                                                    <span class="avatar avatar-sm avatar-rounded">
+                                                                        <img src="../assets/images/faces/2.jpg" alt="">
+                                                                    </span>
+                                                                </div> {% endcomment %}
+                                                                <div class="badge bg-outline-info">low</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End::row-1 -->
+
+             
+
+                <!-- Start::row-3 -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title">
+                                   OnBoarded Candidate List
+                                </div>
+                                <div class="d-flex flex-wrap">
+                                    <div class="me-3 my-1">
+                                        <input class="form-control form-control-sm" type="text" placeholder="Search Here" aria-label=".form-control-sm example">
+                                    </div>
+                                    <div class="dropdown m-1">
+                                        <a href="javascript:void(0);" class="btn btn-primary btn-sm btn-wave waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Sort By<i class="ri-arrow-down-s-line align-middle ms-1 d-inline-block"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a class="dropdown-item" href="javascript:void(0);">New</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Popular</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Relevant</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">S.No</th>
+                                                <th scope="col">Candidate Name</th>
+                                                <th scope="col">Company Name</th>
+                                                <th scope="col">role</th>
+                                                <th scope="col">Selected On</th>
+                                                <th scope="col">Shifts</th>
+                                                <th scope="col">Location</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2">
+                                                            <span class="avatar avatar-xs">
+                                                                <img src="../assets/images/nft-images/1.png" alt="">
+                                                            </span>
+                                                        </div>
+                                                        <div>Ray Optics &amp; Optical Fibre Master Class</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    Science
+                                                </td>
+                                                <td>
+                                                    20
+                                                </td>
+                                                <td>
+                                                    29-05-2023
+                                                </td>
+                                                <td>
+                                                    Shin Opran
+                                                </td>
+                                                <td>
+                                                    25
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-1">
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-info-light btn-wave waves-effect waves-light"><i class="ri-edit-line"></i></a>
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-danger-light btn-wave waves-effect waves-light"><i class="ri-delete-bin-line"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    2
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2">
+                                                            <span class="avatar avatar-xs">
+                                                                <img src="../assets/images/nft-images/2.png" alt="">
+                                                            </span>
+                                                        </div>
+                                                        <div>Master Linear Alzebra Medium Level</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    Mathematics
+                                                </td>
+                                                <td>
+                                                    90
+                                                </td>
+                                                <td>
+                                                    11-06-2023
+                                                </td>
+                                                <td>
+                                                    Arya Neo
+                                                </td>
+                                                <td>
+                                                   773
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-1">
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-info-light btn-wave waves-effect waves-light"><i class="ri-edit-line"></i></a>
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-danger-light btn-wave waves-effect waves-light"><i class="ri-delete-bin-line"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    3
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2">
+                                                            <span class="avatar avatar-xs">
+                                                                <img src="../assets/images/nft-images/8.png" alt="">
+                                                            </span>
+                                                        </div>
+                                                        <div>Learn How To Trade And Invest For-Absolute Beginners</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    Stocks &amp; Trading
+                                                </td>
+                                                <td>
+                                                    161
+                                                </td>
+                                                <td>
+                                                    10-06-2023
+                                                </td>
+                                                <td>
+                                                    Sia Niu
+                                                </td>
+                                                <td>
+                                                   51
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-1">
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-info-light btn-wave waves-effect waves-light"><i class="ri-edit-line"></i></a>
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-danger-light btn-wave waves-effect waves-light"><i class="ri-delete-bin-line"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    4
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2">
+                                                            <span class="avatar avatar-xs">
+                                                                <img src="../assets/images/nft-images/7.png" alt="">
+                                                            </span>
+                                                        </div>
+                                                        <div>Digital Marketing Course from Scratch</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    Marketing
+                                                </td>
+                                                <td>
+                                                    115
+                                                </td>
+                                                <td>
+                                                    21-06-2023
+                                                </td>
+                                                <td>
+                                                    Stuart George
+                                                </td>
+                                                <td>
+                                                   1,189
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-1">
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-info-light btn-wave waves-effect waves-light"><i class="ri-edit-line"></i></a>
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-danger-light btn-wave waves-effect waves-light"><i class="ri-delete-bin-line"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    5
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2">
+                                                            <span class="avatar avatar-xs">
+                                                                <img src="../assets/images/nft-images/5.png" alt="">
+                                                            </span>
+                                                        </div>
+                                                        <div>Data Structures &amp; Algorithms For Beginners</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    Programming
+                                                </td>
+                                                <td>
+                                                    30
+                                                </td>
+                                                <td>
+                                                    15-06-2023
+                                                </td>
+                                                <td>
+                                                    Boran Ray
+                                                </td>
+                                                <td>
+                                                   3,368
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-1">
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-info-light btn-wave waves-effect waves-light"><i class="ri-edit-line"></i></a>
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-danger-light btn-wave waves-effect waves-light"><i class="ri-delete-bin-line"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    6
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center lh-1">
+                                                        <div class="me-2">
+                                                            <span class="avatar avatar-xs">
+                                                                <img src="../assets/images/nft-images/6.png" alt="">
+                                                            </span>
+                                                        </div>
+                                                        <div>Css Zero to Hero Master Class</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    UI/UX
+                                                </td>
+                                                <td>
+                                                    51
+                                                </td>
+                                                <td>
+                                                    22-06-2023
+                                                </td>
+                                                <td>
+                                                    Burak Oin
+                                                </td>
+                                                <td>
+                                                   252
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-1">
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-info-light btn-wave waves-effect waves-light"><i class="ri-edit-line"></i></a>
+                                                        <a aria-label="anchor" href="javascript:void(0);" class="btn btn-icon btn-sm btn-danger-light btn-wave waves-effect waves-light"><i class="ri-delete-bin-line"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex flex-wrap align-items-center">
+                                    <div>
+                                        Showing 6 Entries <i class="bi bi-arrow-right ms-2 fw-semibold"></i>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <nav aria-label="Page navigation" class="pagination-style-4">
+                                            <ul class="pagination mb-0">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="javascript:void(0);">
+                                                        Prev
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link text-primary" href="javascript:void(0);">
+                                                        next
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End::row-3 -->
+
+            </div>
+        </div>
+          
+        </div>

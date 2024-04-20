@@ -1,0 +1,43 @@
+.logo-colour{
+    color:#565bc6 !important; 
+    font-weight:bolder !important;
+    font-size: large !important;
+}
+.curved-background {
+    position: absolute;
+    width: 100%;
+    height: 50px; /* Adjust the height as needed */
+    background-color: #565bc6; /* Color of the curved background */
+    border-radius: 0 0 50% 50%; /* This creates the curved shape */
+    bottom: 0;
+    left: 0;
+    z-index: -2; /* Ensure it's behind the menu items */
+  }
+
+  /* Style for the active menu item */
+  .nav-item.active .curved-background {
+    z-index: -1; /* Ensure it's behind the menu items */
+  }
+  text-white{
+    color:white;
+  }
+  .avatar {
+    display: inline-block;
+    width: 32px; /* Adjust size as needed */
+    height: 32px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the avatar circular */
+    background-color: #565bc6; /* Background color for the avatar */
+    color: #fff; /* Text color for the letter "A" */
+    font-size: 16px; /* Adjust font size as needed */
+    text-align: center;
+    line-height: 32px; /* Vertical centering */
+}
+ .dt-buttons {
+    position: relative;
+    float: left;
+    font-size: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 35px;
+  }
